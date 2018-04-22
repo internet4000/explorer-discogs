@@ -2,6 +2,10 @@
   font-size: 1em;
 }
 
+nav {
+  margin-bottom: 2em;
+}
+
 body {
   margin: 3vw;
   font-size: 13px;
@@ -10,4 +14,3 @@ body {
   color: black;
   background: hsl(0, 0%, 96%);
 }
-
