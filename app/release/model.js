@@ -11,6 +11,7 @@ export default DS.Model.extend({
   uri: DS.attr('string'),
   videos: DS.attr(),
   year: DS.attr('number'),
+  artists_sort: DS.attr('string')
 
   // labels: DS.hasMany('label'),
   // artists: DS.hasMany('artist')

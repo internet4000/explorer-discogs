@@ -6,13 +6,21 @@
   released: {{model.released}}
   uri: {{model.uri}}
   year: {{model.year}}
+  artist: {{model.artists_sort}}
 </pre>
 
 <p>Genres:</p>
 {{each-list list=model.genres}}
 
-<p>Images:</p>
-{{each-list list=model.images}}
+{{!-- <p>Images:</p>
+{{#each-list list=model.images as |image|}}
+  {{image.uri}}
+  {{image.height}}
+  {{image.width}}
+  {{image.resource_url}}
+  {{image.type}}
+  {{image.uri150}}
+{{/each}} --}}
 
 <p>Styles:</p>
 {{each-list list=model.styles}}
