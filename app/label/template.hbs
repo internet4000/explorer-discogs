@@ -3,14 +3,13 @@
 
 <h3>parent label</h3>
 <ul>
-  <li>{{link-to model.label.name "label" model.label}}</li>
+  <li>{{link-to model.parentLabel.name "label" model.parentLabel}}</li>
 </ul>
 
 <h3>sublabels</h3>
 {{#each-list list=model.sublabels as |label|}}
   {{link-to label.name "label" label}}
 {{/each-list}}
-<p><em>note: we're only showing two to save bandwidth</em></p>
 
 <h3>profile</h3>
 <p>{{model.profile}}</p>

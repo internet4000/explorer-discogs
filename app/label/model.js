@@ -10,5 +10,5 @@ export default DS.Model.extend({
   urls: DS.attr(),
 
   sublabels: DS.hasMany('label', {inverse: null, async: true}),
-  label: DS.belongsTo('label', {inverse: null, async: true})
+  parentLabel: DS.belongsTo('label', {inverse: null, async: true})
 });
