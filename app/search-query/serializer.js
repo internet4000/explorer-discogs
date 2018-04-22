@@ -8,19 +8,19 @@ const serializeSearch = (item, index) => {
 };
 
 export default ApplicationSerializer.extend({
-  normalizeArrayResponse (store, primaryModelClass, payload, id, requestType) {
-    payload = {
-      data: payload.results.map(serializeSearch),
-      meta: {
-        pagination: payload.pagination
-      },
-      errors: payload.errors || []
-    };
-    delete payload.results;
-    delete payload.pagination;
-    delete payload.errors;
+  // normalizeArrayResponse (store, primaryModelClass, payload, id, requestType) {
+  //   payload = {
+  //     data: payload.results.map(serializeSearch),
+  //     meta: {
+  //       pagination: payload.pagination
+  //     },
+  //     errors: payload.errors || []
+  //   };
+  //   delete payload.results;
+  //   delete payload.pagination;
+  //   delete payload.errors;
 
-    // return this._super(...arguments);
-    return payload;
-  }
+  //   // return this._super(...arguments);
+  //   return payload;
+  // }
 });
