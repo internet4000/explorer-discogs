@@ -1,0 +1,18 @@
+<h2>Label</h2>
+<h1>{{model.name}}</h1>
+
+<pre>
+  {{model.profile}}
+
+  contact: {{model.contactInfo}}
+
+  uri: {{model.uri}}
+
+  urls
+  {{each-list list=model.urls}}
+
+  // sublabels: DS.hasMany('label'),
+  // parent_label: DS.belongsTo('label')
+  </pre>
+
+{{outlet}}
