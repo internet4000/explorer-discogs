@@ -1,6 +1,9 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
+  // artists: DS.hasMany('artist')
+  // labels: DS.hasMany('label'),
+  artistsSort: DS.attr('string'),
   country: DS.attr('string'),
   genres: DS.attr(),
   images: DS.attr(),
@@ -11,8 +14,4 @@ export default DS.Model.extend({
   uri: DS.attr('string'),
   videos: DS.attr(),
   year: DS.attr('number'),
-  artists_sort: DS.attr('string')
-
-  // labels: DS.hasMany('label'),
-  // artists: DS.hasMany('artist')
 });

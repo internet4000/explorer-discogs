@@ -1,8 +1,8 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  contact_info: DS.attr('string'),
-  releases_url: DS.attr('string'),
+  contactInfo: DS.attr('string'),
+  releasesUrl: DS.attr('string'),
   images: DS.attr(),
   name: DS.attr('string'),
   profile: DS.attr('string'),
@@ -10,9 +10,9 @@ export default DS.Model.extend({
   urls: DS.attr(),
 
   sublabels: DS.hasMany('label', {
-    inverse: 'parent_label'
+    inverse: 'parentLabel'
   }),
-  parent_label: DS.belongsTo('label', {
+  parentLabel: DS.belongsTo('label', {
     inverse: 'sublabels'
   })
 });
