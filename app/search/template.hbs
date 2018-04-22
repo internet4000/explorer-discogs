@@ -1,0 +1,9 @@
+{{#each-list list=model as |item|}}
+  <p>
+    <!-- <img
+         src={{item.thumb}}
+         alt={{item.title}} /> -->
+    (<strong>{{item.type}}</strong>) {{item.title}}
+  </p>
+{{/each-list}}
+{{outlet}}
