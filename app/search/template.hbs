@@ -1,9 +1,8 @@
-{{#each-list list=model as |item|}}
-  <p>
+{{#each-list list=model as |result|}}
+  <em>{{result.type}}</em> {{link-to result.title result.type result.id}}
     <!-- <img
-         src={{item.thumb}}
-         alt={{item.title}} /> -->
-    (<strong>{{item.type}}</strong>) {{item.title}}
-  </p>
+         src={{result.thumb}}
+         alt={{result.title}} /> -->
 {{/each-list}}
+
 {{outlet}}
