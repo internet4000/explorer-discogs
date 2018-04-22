@@ -21,10 +21,9 @@ module.exports = {
     {
       files: [
         'ember-cli-build.js',
-        'index.js',
         'testem.js',
         'config/**/*.js',
-        'tests/dummy/config/**/*.js'
+        'lib/*/index.js'
       ],
       parserOptions: {
         sourceType: 'script',
