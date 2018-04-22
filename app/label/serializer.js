@@ -3,14 +3,16 @@ import Serializer from '../application/serializer'
 export default Serializer.extend({
   // keyForRelationship(key, relationship, method) {
   //   console.log({key, relationship, method})
-  //   if (key === 'label') return 'parent_label'
+  //   if (key === 'label') {
+  //     console.log('label key!!')
+  //     return 'parentLabel'
+  //   }
   //   return key
   // },
   normalizeFindRecordResponse(store, primaryModelClass, payload, id, requestType) {
     let newPayload = payload
 
     if (payload.parent_label) {
-      // newPayload.parent_label = payload.parent_label.id
       newPayload.label = payload.parent_label.id
     }
 

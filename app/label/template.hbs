@@ -2,12 +2,15 @@
 <h1>{{model.name}}</h1>
 
 <h3>parent label</h3>
-<p>{{link-to model.label.name "label" model.label}}</p>
+<ul>
+  <li>{{link-to model.label.name "label" model.label}}</li>
+</ul>
 
 <h3>sublabels</h3>
 {{#each-list list=model.sublabels as |label|}}
   {{link-to label.name "label" label}}
 {{/each-list}}
+<p><em>note: we're only showing two to save bandwidth</em></p>
 
 <h3>profile</h3>
 <p>{{model.profile}}</p>
@@ -20,7 +23,6 @@
 
 <h3>uri</h3>
 <p>{{model.uri}}</p>
-
 
 <h3>urls</h3>
 {{each-list list=model.urls}}
