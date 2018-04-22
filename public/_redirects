@@ -1,0 +1,5 @@
+# https://www.netlify.com/docs/redirects/
+
+# Serve all requests from index.html (the ember app)
+/*    	/index.html   200
+
