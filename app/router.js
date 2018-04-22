@@ -8,6 +8,7 @@ const Router = EmberRouter.extend({
 
 Router.map(function() {
   this.route('release', {path: 'releases/:release_id'});
+  this.route('search');
 });
 
 export default Router;
