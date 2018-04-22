@@ -5,7 +5,9 @@
 <p>{{link-to model.label.name "label" model.label}}</p>
 
 <h3>sublabels</h3>
-{{each-list list=model.sublabels}}
+{{#each-list list=model.sublabels as |label|}}
+  {{link-to label.name "label" label}}
+{{/each-list}}
 
 <h3>profile</h3>
 <p>{{model.profile}}</p>

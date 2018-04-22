@@ -6,7 +6,7 @@ export default Serializer.extend({
   //   if (key === 'label') return 'parent_label'
   //   return key
   // },
-  normalizeResponse(store, primaryModelClass, payload, id, requestType) {
+  normalizeFindRecordResponse(store, primaryModelClass, payload, id, requestType) {
     let newPayload = payload
 
     if (payload.parent_label) {
