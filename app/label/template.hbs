@@ -1,18 +1,19 @@
 <h2>Label</h2>
 <h1>{{model.name}}</h1>
-
+<p>{{model.profile}}</p>
 <pre>
-  {{model.profile}}
+  contact: {{model.contact_info}}
 
-  contact: {{model.contactInfo}}
+  releases: {{model.releases_url}}
 
   uri: {{model.uri}}
 
-  urls
-  {{each-list list=model.urls}}
 
   // sublabels: DS.hasMany('label'),
   // parent_label: DS.belongsTo('label')
   </pre>
+
+  urls
+  {{each-list list=model.urls}}
 
 {{outlet}}
