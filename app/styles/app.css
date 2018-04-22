@@ -1,0 +1,13 @@
+* {
+  font-size: 1em;
+}
+
+body {
+  margin: 3vw;
+  font-size: 13px;
+  line-height: 1.5;
+  font-family: system-ui, segoe ui, sans-serif;
+  color: black;
+  background: hsl(0, 0%, 96%);
+}
+

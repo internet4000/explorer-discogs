@@ -7,6 +7,7 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('label', {path: 'labels/:label_id'});
   this.route('release', {path: 'releases/:release_id'});
   this.route('search');
 });
