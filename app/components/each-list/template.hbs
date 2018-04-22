@@ -1,0 +1,11 @@
+<ul>
+  {{#each list as |item|}}
+    <li>
+      {{#if hasBlock}}
+        {{yield item}}
+      {{else}}
+        {{item}}
+      {{/if}}
+    </li>
+  {{/each}}
+</ul>

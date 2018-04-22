@@ -1,0 +1,40 @@
+<h1>{{model.title}}</h1>
+
+<pre>
+  id: {{model.id}}
+  country: {{model.country}}
+  released: {{model.released}}
+  uri: {{model.uri}}
+  year: {{model.year}}
+  artist: {{model.artists_sort}}
+</pre>
+
+<p>Genres:</p>
+{{each-list list=model.genres}}
+
+{{!-- <p>Images:</p>
+{{#each-list list=model.images as |image|}}
+  {{image.uri}}
+  {{image.height}}
+  {{image.width}}
+  {{image.resource_url}}
+  {{image.type}}
+  {{image.uri150}}
+{{/each}} --}}
+
+<p>Styles:</p>
+{{each-list list=model.styles}}
+
+<p>Tracklist:</p>
+{{#each-list list=model.tracklist as |track|}}
+  {{track.position}} -
+  {{track.title}}
+  {{track.duration}}
+  {{track.type}}
+{{/each-list}}
+
+<p>Videos</p>
+{{each-list list=model.videos}}
+
+{{outlet}}
+
