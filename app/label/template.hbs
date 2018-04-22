@@ -2,9 +2,10 @@
 <h1>{{model.name}}</h1>
 
 <h3>parent label</h3>
-{{model.parentLabel}}<br>
-id:  {{model.parentLabel.id}}<br>
-{{link-to "Go to parent label" "label" model.parentLabel.id}}
+<p>{{link-to model.label.name "label" model.label}}</p>
+
+<h3>sublabels</h3>
+{{each-list list=model.sublabels}}
 
 <h3>profile</h3>
 <p>{{model.profile}}</p>
@@ -18,8 +19,6 @@ id:  {{model.parentLabel.id}}<br>
 <h3>uri</h3>
 <p>{{model.uri}}</p>
 
-{{!-- <h3>sublabels</h3>
-{{each-list list=model.sublabels}} --}}
 
 <h3>urls</h3>
 {{each-list list=model.urls}}

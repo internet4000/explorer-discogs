@@ -1,24 +1,23 @@
 import Serializer from '../application/serializer'
 
 export default Serializer.extend({
-  // normalizeResponse(store, primaryModelClass, payload, id, requestType) {
-  //   let newPayload = payload;
-
-  //   if (payload.parent_label) {
-  //     console.log(payload)
-
-  //     // option 1
-  //     payload.parent_label.type = 'label'
-
-  //     // option 2
-  //     newPayload.links = {
-  //       'parent_label': `labels/${payload.parent_label.id}`
-  //     }
-  //     delete newPayload.parent_label
-
-  //     console.log(newPayload)
-  //   }
-
-  //   return this._super(...arguments);
+  // keyForRelationship(key, relationship, method) {
+  //   console.log({key, relationship, method})
+  //   if (key === 'label') return 'parent_label'
+  //   return key
   // },
-});
+  normalizeResponse(store, primaryModelClass, payload, id, requestType) {
+    let newPayload = payload
+
+    if (payload.parent_label) {
+      // newPayload.parent_label = payload.parent_label.id
+      newPayload.label = payload.parent_label.id
+    }
+
+    if (payload.sublabels) {
+      newPayload.sublabels = payload.sublabels.map(l => l.id).slice(0, 2)
+    }
+
+    return this._super(store, primaryModelClass, newPayload, id, requestType)
+  }
+})
