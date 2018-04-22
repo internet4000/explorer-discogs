@@ -2,14 +2,14 @@ import DS from 'ember-data';
 
 export default DS.Model.extend({
   country: DS.attr('string'),
-  // genres: DS.attr('array'),
-  // images: DS.attr('array'),
+  genres: DS.attr(),
+  images: DS.attr(),
   released: DS.attr('date'),
-  // styles: DS.attr('array'),
+  styles: DS.attr(),
   title: DS.attr('string'),
-  // tracklist: DS.attr('array'),
+  tracklist: DS.attr(),
   uri: DS.attr('string'),
-  // videos: DS.attr('array'),
+  videos: DS.attr(),
   year: DS.attr('number'),
 
   // labels: DS.hasMany('label'),
