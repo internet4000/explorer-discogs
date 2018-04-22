@@ -4,7 +4,6 @@ const { Model, attr } = DS;
 
 export default Model.extend({
   type: attr('string'),
-  id: attr('string'),
   thumb: attr('string'),
   uri: attr('string'),
   cover_image: attr('string'),
