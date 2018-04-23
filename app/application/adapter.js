@@ -10,5 +10,10 @@ export default DS.RESTAdapter.extend({
     return {
       'Authorization': 'Discogs key=cnoOBdbCifZbuXMwNtph, secret=VzlAmAOVmCjeLFjXlFXZwSYYRarmJHJR'
     };
-  })
+  }),
+
+  shouldBackgroundReloadRecord() {
+    // Don't fetch records again if they are already in the store.
+    return false
+  }
 });
