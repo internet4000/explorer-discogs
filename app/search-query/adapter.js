@@ -8,9 +8,9 @@ export default ApplicationAdapter.extend({
   pathForType() {
     return 'search';
   },
-
   // Querying Discogs "search" endpoints requires authentication.
-  headers: computed(function() {
-    return {Authorization}
-  })
+  init() {
+    this._super(...arguments);
+    this.headers['Authorization'] = Authorization;
+  }
 });
