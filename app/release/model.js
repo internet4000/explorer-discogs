@@ -1,7 +1,7 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  // artists: DS.hasMany('artist')
+  artists: DS.hasMany('artist', {async: true}),
   // labels: DS.hasMany('label'),
   artistsSort: DS.attr('string'),
   country: DS.attr('string'),
