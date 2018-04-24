@@ -32,6 +32,9 @@
   {{/each-list}}
 {{/each-list}}
 
+<h3>Notes</h3>
+<p>{{model.notes}}</p>
+
 <h3>Videos</h3>
 {{#each-list list=model.videos as |video|}}
   <a href="{{video.uri}}">{{video.title}}</a>
