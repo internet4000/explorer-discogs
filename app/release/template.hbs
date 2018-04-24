@@ -26,6 +26,11 @@
 <p>Styles:</p>
 {{each-list list=model.styles}}
 
+<p>Artists:</p>
+{{#each-list list=model.artists as |artist|}}
+  {{link-to artist.name "artist" artist}}
+{{/each-list}}
+
 <p>Tracklist:</p>
 {{#each-list list=model.tracklist as |track|}}
   {{track.position}} -

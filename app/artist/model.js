@@ -1,5 +1,19 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
+  dataQuality: DS.attr('string'),
+  images: DS.attr(),
 
+  members: DS.hasMany('artist', {inverse: null}),
+  groups: DS.hasMany('artist', {inverse: null}),
+  aliases: DS.hasMany('artist', {inverse: null}),
+
+  name: DS.attr('string'),
+  realname: DS.attr('string'),
+  namevariations: DS.attr(),
+  profile: DS.attr('string'),
+  releasesUrl: DS.attr('string'),
+  resourceUrl: DS.attr('string'),
+  uri: DS.attr('string'),
+  urls: DS.attr(),
 });
