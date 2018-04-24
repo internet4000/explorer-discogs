@@ -11,9 +11,9 @@ export default Serializer.extend({
       newPayload.release = payload.main_release
     }
 
-    if (payload.artists) {
-      newPayload.artists = payload.artists.map(artist => artist.id)
-    }
+    // if (payload.artists) {
+    //   newPayload.artists = payload.artists.map(artist => artist.id)
+    // }
 
     return this._super(store, primaryModelClass, newPayload, id, requestType)
   }
