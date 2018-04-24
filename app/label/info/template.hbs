@@ -1,0 +1,34 @@
+<h3>profile</h3>
+<p>{{model.profile}}</p>
+
+<h3>parent label</h3>
+<ul>
+  <li>{{link-to model.parentLabel.name "label" model.parentLabel}}</li>
+</ul>
+
+<h3>sublabels</h3>
+{{#each-list list=model.sublabels as |label|}}
+  {{link-to label.name "label" label}}
+{{/each-list}}
+
+<h3>urls</h3>
+{{#each-list list=model.urls as |item|}}
+  <a
+    href={{item}}
+    target="_blank"
+    rel="noopener">{{item}}</a>
+{{/each-list}}
+
+<h3>contact</h3>
+<p>{{model.contactInfo}}</p>
+
+<h3>uri</h3>
+<p>
+  <a
+    href={{model.uri}}
+    target="_blank"
+    rel="noopener">{{model.uri}}</a>
+</p>
+
+
+{{outlet}}

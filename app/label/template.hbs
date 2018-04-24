@@ -2,33 +2,8 @@
 <h1>{{model.name}}</h1>
 
 <nav>
-  {{link-to 'Infos' 'label'}}
-  {{link-to 'Releases list' 'label.releases'}}
+  {{link-to 'Releases list' 'label'}}
+  {{link-to 'Infos' 'label.info'}}
 </nav>
 
 {{outlet}}
-
-<h3>parent label</h3>
-<ul>
-  <li>{{link-to model.parentLabel.name "label" model.parentLabel}}</li>
-</ul>
-
-<h3>sublabels</h3>
-{{#each-list list=model.sublabels as |label|}}
-  {{link-to label.name "label" label}}
-{{/each-list}}
-
-<h3>profile</h3>
-<p>{{model.profile}}</p>
-
-<h3>contact</h3>
-<p>{{model.contactInfo}}</p>
-
-<h3>releases</h3>
-<p>{{model.releasesUrl}}</p>
-
-<h3>uri</h3>
-<p>{{model.uri}}</p>
-
-<h3>urls</h3>
-{{each-list list=model.urls}}
