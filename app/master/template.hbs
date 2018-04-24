@@ -1,0 +1,45 @@
+<p><em>master</em></p>
+<h1>{{model.title}}</h1>
+
+<pre>
+  id: {{model.id}}
+  year: {{model.year}}
+  dataQuality: {{model.dataQuality}}
+  numForSale: {{model.numForSale}}
+  lowestPrice: {{model.lowestPrice}}
+
+  uri: {{model.uri}}
+  mainReleaseUrl: {{model.mainReleaseUrl}}
+  resourceUrl: {{model.resourceUrl}}
+</pre>
+
+<h3>Styles</h3>
+{{each-list list=model.styles}}
+
+<h3>Genres</h3>
+{{each-list list=model.genres}}
+
+<h3>Artists</h3>
+{{#each-list list=model.artists as |artist|}}
+  {{link-to artist.name "artist" artist.id}}
+{{/each-list}}
+
+<h3>Videos</h3>
+{{#each-list list=model.videos as |video|}}
+  <a href="{{video.uri}}">{{video.title}}</a>
+{{/each-list}}
+
+<h3>Tracklist</h3>
+{{#each-list list=model.tracklist as |track|}}
+  {{track.position}} -
+  {{track.title}}
+  {{track.duration}}
+  {{track.type}}
+  {{#each-list list=track.extraartists as |artist|}}
+    {{link-to artist.name "artist" artist.id}} ({{artist.role}})
+  {{/each-list}}
+{{/each-list}}
+
+
+{{outlet}}
+
