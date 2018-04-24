@@ -1,14 +1,12 @@
 <h2>label</h2>
 <h1>{{model.name}}</h1>
 
-<div>
-  <p>labelReleases</p>
+<nav>
+  {{link-to 'Infos' 'label'}}
+  {{link-to 'Releases list' 'label.releases'}}
+</nav>
 
-  {{#each-list list=model.labelReleases.releases as |item|}}
-    {{item.title}}
-  {{/each-list}}
-</div>
-
+{{outlet}}
 
 <h3>parent label</h3>
 <ul>
@@ -34,5 +32,3 @@
 
 <h3>urls</h3>
 {{each-list list=model.urls}}
-
-{{outlet}}
