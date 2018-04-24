@@ -4,30 +4,21 @@
 <pre>
   id: {{model.id}}
   year: {{model.year}}
-  dataQuality: {{model.dataQuality}}
+  uri: {{model.uri}}
   numForSale: {{model.numForSale}}
   lowestPrice: {{model.lowestPrice}}
-
-  uri: {{model.uri}}
-  mainReleaseUrl: {{model.mainReleaseUrl}}
-  resourceUrl: {{model.resourceUrl}}
 </pre>
 
-<h3>Styles</h3>
-{{each-list list=model.styles}}
+<h3>Main release</h3>
+<ul>
+  <li>{{link-to "Main Release" "release" model.mainRelease.id}}</li>
+</ul>
 
 <h3>Genres</h3>
 {{each-list list=model.genres}}
 
-<h3>Artists</h3>
-{{#each-list list=model.artists as |artist|}}
-  {{link-to artist.name "artist" artist.id}}
-{{/each-list}}
-
-<h3>Videos</h3>
-{{#each-list list=model.videos as |video|}}
-  <a href="{{video.uri}}">{{video.title}}</a>
-{{/each-list}}
+<h3>Styles</h3>
+{{each-list list=model.styles}}
 
 <h3>Tracklist</h3>
 {{#each-list list=model.tracklist as |track|}}
@@ -40,6 +31,15 @@
   {{/each-list}}
 {{/each-list}}
 
+<h3>Videos</h3>
+{{#each-list list=model.videos as |video|}}
+  <a href="{{video.uri}}">{{video.title}}</a>
+{{/each-list}}
+
+<h3>Artists</h3>
+{{#each-list list=model.artists as |artist|}}
+  {{link-to artist.name "artist" artist.id}}
+{{/each-list}}
 
 {{outlet}}
 
