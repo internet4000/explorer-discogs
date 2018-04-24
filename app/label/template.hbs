@@ -1,6 +1,15 @@
 <h2>label</h2>
 <h1>{{model.name}}</h1>
 
+<div>
+  <p>labelReleases</p>
+
+  {{#each-list list=model.labelReleases.releases as |item|}}
+    {{item.id}}
+  {{/each-list}}
+</div>
+
+
 <h3>parent label</h3>
 <ul>
   <li>{{link-to model.parentLabel.name "label" model.parentLabel}}</li>
