@@ -1,15 +1,14 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  // artists: DS.hasMany('artist'),
   // community: DS.attr(),
   // formatQuantity: DS.attr('number'),
   // formats: DS.attr(),
-  // identifiers: DS.attr(),
   // labels: DS.hasMany('label'),
   // series: DS.attr(),
   // status: DS.attr('string'),
   // thumb: DS.attr(),
+  artists: DS.hasMany('artist', {async: true}),
   artists: DS.attr(),
   artistsSort: DS.attr('string'),
   companies: DS.attr(),
