@@ -6,8 +6,8 @@ export default Route.extend({
       refreshModel: true
     }
   },
-  model(params, transition) {
-    if(params.search) {
+  model(params) {
+    if (params.search) {
       return this.get('store').query('searchQuery', {
         q: params.search
       });
