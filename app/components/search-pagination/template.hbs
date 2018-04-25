@@ -1,13 +1,15 @@
+<span>(Page {{currentPage}} on {{totalPages}})</span>
+
 {{#if hasPreviousPage}}
   {{link-to
-      '← Previous page'
+      '← Previous'
       'search'
       (query-params search=search page=previousPage)}}
 {{/if}}
 
 {{#if hasNextPage}}
   {{link-to
-      'Next page →'
+      'Next →'
       'search'
       (query-params search=search page=nextPage)}}
 {{/if}}
