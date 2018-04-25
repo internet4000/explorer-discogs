@@ -1,5 +1,7 @@
-{{input
+<form {{action "submit" search on="submit"}}>
+  {{input
+    type="search"
     placeholder='Search artists, label or release'
-    value=searchAlias}}
-
-{{link-to 'search' (query-params search=searchAlias)}}
+    value=search}}
+  <button type="submit">Search</button>
+</form>
