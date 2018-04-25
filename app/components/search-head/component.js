@@ -1,7 +1,12 @@
 import Component from '@ember/component';
-import { oneWay } from '@ember/object/computed';
+import {inject} from '@ember/service'
 
 export default Component.extend({
+  router: inject(),
   search: '',
-  searchAlias: oneWay('search')
+  actions: {
+    submit(search) {
+      this.get('router').transitionTo('search', {queryParams: {search}})
+    }
+  }
 });
