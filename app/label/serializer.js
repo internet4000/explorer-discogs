@@ -1,5 +1,11 @@
 import Serializer from '../application/serializer'
 
+const extractUrls = (payload) => {
+  return Object.assign(payload, {
+    labelReleases: payload.id
+  });
+};
+
 export default Serializer.extend({
   attrs: {
     // 2. Change back
@@ -7,6 +13,7 @@ export default Serializer.extend({
   },
 
   normalizeFindRecordResponse(store, primaryModelClass, payload, id, requestType) {
+
     let newPayload = payload
 
     if (payload.parent_label) {
@@ -19,6 +26,7 @@ export default Serializer.extend({
       newPayload.sublabels = payload.sublabels.map(l => l.id).slice(0, 2)
     }
 
-    return this._super(store, primaryModelClass, newPayload, id, requestType)
+    let normalizedPayload = extractUrls(newPayload);
+    return this._super(store, primaryModelClass, normalizedPayload, id, requestType)
   }
 })
