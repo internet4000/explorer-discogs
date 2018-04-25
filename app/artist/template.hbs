@@ -1,13 +1,15 @@
 <h2>Artist</h2>
 <h1>{{model.name}}</h1>
-
 <p>real name: {{model.realname}}</p>
 <p>releasesUrl: {{model.releasesUrl}}</p>
-<p>url: {{model.resourceUrl}}</p>
+
 <p>{{model.profile}}</p>
 
 <p>name variations:</p>
 {{each-list list=model.namevariations}}
+
+<p>URLs:</p>
+{{each-list list=model.urls}}
 
 <h3>Members (artists)</h3>
 {{#each-list list=model.members as |artist|}}
@@ -21,19 +23,13 @@
   {{link-to artist.name "artist" artist}}
 {{/each-list}}
 
-<p>Groups (artists):</p>
+<h3>Groups (artists):</h3>
 {{#each-list list=model.groups as |artist|}}
   {{link-to artist.name "artist" artist}}
 {{/each-list}}
 
-<p>URLs:</p>
-{{each-list list=model.urls}}
-
-<h3>errors?</h3>
-{{#each model.errors.name as |error|}}
-  <div class="error">
-    {{error.message}}
-  </div>
-{{/each}}
+<p>
+  <a href="https://www.discogs.com/artist/{{model.id}}" rel="noopener" target="_blank">View on Discogs</a>
+</p>
 
 {{outlet}}
