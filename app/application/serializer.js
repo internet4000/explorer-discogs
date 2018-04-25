@@ -7,7 +7,15 @@ export default DS.JSONSerializer.extend({
   },
 
   normalizeArrayResponse(store, primaryModelClass, payload, id, requestType) {
-    let newPayload = payload.results;
-    return this._super(store, primaryModelClass, newPayload, id, requestType);
-  }
+    let { results, pagination } = payload;
+
+    let newPayload = results;
+
+    let document = this._super(store, primaryModelClass, newPayload, id, requestType);
+
+    if (pagination) {
+      document.meta = Object.assign({}, { pagination });
+    }
+    return document;
+  },
 });
