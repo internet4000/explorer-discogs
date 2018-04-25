@@ -2,8 +2,13 @@
   font-size: 1em;
 }
 
-nav {
-  margin-bottom: 2em;
+nav,
+h1,
+h2,
+h3,
+p {
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 body {
@@ -18,4 +23,13 @@ body {
 a,
 a:visited {
   color: black;
+}
+
+a.active {
+  text-decoration: none;
+  background: gold;
+}
+
+ul {
+  padding-left: 2em;
 }
