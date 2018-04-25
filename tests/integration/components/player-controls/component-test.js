@@ -12,15 +12,15 @@ module('Integration | Component | player-controls', function(hooks) {
 
     await render(hbs`{{player-controls}}`);
 
-    assert.equal(this.element.textContent.trim(), '');
+    assert.ok(this.element.querySelectorAll('button').length > 0);
 
-    // Template block usage:
-    await render(hbs`
-      {{#player-controls}}
-        template block text
-      {{/player-controls}}
-    `);
+    // // Template block usage:
+    // await render(hbs`
+    //   {{#player-controls}}
+    //     template block text
+    //   {{/player-controls}}
+    // `);
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    // assert.equal(this.element.textContent.trim(), 'template block text');
   });
 });
