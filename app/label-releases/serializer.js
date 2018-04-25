@@ -1,7 +1,7 @@
 import DS from 'ember-data';
-import ReleaseSerializer from '../release/serializer';
+import ApplicationSerializer  from '../application/serializer';
 
-export default ReleaseSerializer.extend({
+export default ApplicationSerializer .extend({
   normalizeResponse(store, primaryModelClass, payload, id, requestType) {
     let newPayload = {
       id,
