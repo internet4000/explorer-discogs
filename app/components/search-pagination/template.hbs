@@ -1,0 +1,13 @@
+{{#if hasPreviousPage}}
+  {{link-to
+      '← Previous page'
+      'search'
+      (query-params search=search page=previousPage)}}
+{{/if}}
+
+{{#if hasNextPage}}
+  {{link-to
+      'Next page →'
+      'search'
+      (query-params search=search page=nextPage)}}
+{{/if}}

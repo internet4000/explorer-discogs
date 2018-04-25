@@ -4,12 +4,17 @@ export default Route.extend({
   queryParams: {
     search: {
       refreshModel: true
+    },
+    page: {
+      refreshModel: true
     }
   },
   model(params, transition) {
     if(params.search) {
       return this.get('store').query('searchQuery', {
-        q: params.search
+        q: params.search,
+        page: params.page,
+        per_page: params.perPage
       });
     }
   }
