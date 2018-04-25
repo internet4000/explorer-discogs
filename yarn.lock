@@ -7051,6 +7051,10 @@ yeast@0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/yeast/-/yeast-0.1.2.tgz#008e06d8094320c372dbc2f8ed76a0ca6c8ac419"
 
+youtube-regex@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/youtube-regex/-/youtube-regex-1.0.5.tgz#5f27facab0b7d66d01eebc7afc9a6a69cf61abd8"
+
 yt-player@^2.6.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/yt-player/-/yt-player-2.6.0.tgz#2efa37f1b61d2a3bca9f8eb53fbcd41dc4062b50"
