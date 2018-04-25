@@ -13,8 +13,15 @@ export default Service.extend({
   currentTrack: undefined,
   youtubePlayer: undefined,
   play(model) {
-    this.get('youtubePlayer')
-      .load(youtubeIdFromUrl(model.uri), true);
+    const player = this.get('youtubePlayer')
+    if (!model) {
+      player.play()
+      return
+    }
+    player.load(youtubeIdFromUrl(model.uri), true);
     this.set('currentTrack', model);
+  },
+  pause() {
+    this.get('youtubePlayer').pause()
   }
 });
