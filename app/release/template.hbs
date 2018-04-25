@@ -3,11 +3,10 @@
 
 <pre>id: {{model.id}}
 year: {{model.year}}
-uri: {{model.uri}}
-numForSale: {{model.numForSale}}
-lowestPrice: {{model.lowestPrice}}
 country: {{model.country}}
 released: {{model.released}}
+numForSale: {{model.numForSale}}
+lowestPrice: {{model.lowestPrice}}
 </pre>
 
 <h3>Main artist</h3>
@@ -59,7 +58,7 @@ released: {{model.released}}
 {{/each}} --}}
 
 <p>
-  <a href="https://www.discogs.com/release/{{model.id}}" rel="noopener" target="_blank">View on Discogs</a>
+  <a href="{{model.uri}}" rel="noopener" target="_blank">View on Discogs</a>
 </p>
 
 {{outlet}}
