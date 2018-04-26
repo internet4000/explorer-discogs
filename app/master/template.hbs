@@ -1,17 +1,10 @@
 <p><em>master</em></p>
 <h1>{{model.title}}</h1>
 
-<pre>id: {{model.id}}
-year: {{model.year}}
-uri: {{model.uri}}
+<pre>year: {{model.year}}
 numForSale: {{model.numForSale}}
 lowestPrice: {{model.lowestPrice}}
 </pre>
-
-<h3>Main release</h3>
-<ul>
-  <li>{{link-to "Main Release" "release" model.mainRelease.id}}</li>
-</ul>
 
 <h3>Genres</h3>
 {{each-list list=model.genres}}
@@ -39,6 +32,12 @@ lowestPrice: {{model.lowestPrice}}
 {{#each-list list=model.artists as |artist|}}
   {{link-to artist.name "artist" artist.id}}
 {{/each-list}}
+
+<h3>Main release</h3>
+<ul>
+  <li>{{link-to "View main release" "release" model.mainRelease.id}}</li>
+  <li><a href="{{model.versionsUrl}}" rel="noopener" target="_blank">View more versions</a></li>
+</ul>
 
 {{outlet}}
 

@@ -1,17 +1,21 @@
 {{!-- <h3>profile</h3> --}}
 <p>{{model.profile}}</p>
 
-<h3>parent label</h3>
+{{#if model.parentLabel}}
+<h3>Parent label</h3>
 <ul>
   <li>{{link-to model.parentLabel.name "label" model.parentLabel}}</li>
 </ul>
+{{/if}}
 
-<h3>sublabels</h3>
+{{#if model.sublabels}}
+<h3>Sublabels</h3>
 {{#each-list list=model.sublabels as |label|}}
   {{link-to label.name "label" label}}
 {{/each-list}}
+{{/if}}
 
-<h3>urls</h3>
+<h3>URLs</h3>
 {{#each-list list=model.urls as |item|}}
   <a
     href={{item}}
@@ -19,16 +23,7 @@
     rel="noopener">{{item}}</a>
 {{/each-list}}
 
-<h3>contact</h3>
+<h3>Contact</h3>
 <p>{{model.contactInfo}}</p>
-
-<h3>uri</h3>
-<p>
-  <a
-    href={{model.uri}}
-    target="_blank"
-    rel="noopener">{{model.uri}}</a>
-</p>
-
 
 {{outlet}}

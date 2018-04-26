@@ -1,15 +1,23 @@
 <p><em>artist</em></p>
 <h1>{{model.name}}</h1>
-{{#if model.realname}}<p>real name: {{model.realname}}</p>{{/if}}
-<p>releasesUrl: {{model.releasesUrl}}</p>
 
+{{#if model.realname}}
+  <h3>Real name</h3>
+  <p>{{model.realname}}</p>
+{{/if}}
+
+{{#if model.profile}}
 <h3>Profile</h3>
 <p>{{model.profile}}</p>
+{{/if}}
 
 {{#if model.namevariations}}
 <h3>Name variations</h3>
 {{each-list list=model.namevariations}}
 {{/if}}
+
+<h3>Releases</h3>
+<p>releasesUrl: {{model.releasesUrl}}</p>
 
 {{#if model.members}}
 <h3>Members (artists)</h3>
@@ -18,15 +26,19 @@
 {{/each-list}}
 {{/if}}
 
+{{#if model.aliases}}
 <h3>Aliases (artists)</h3>
 {{#each-list list=model.aliases as |artist|}}
   {{link-to artist.name "artist" artist}}
 {{/each-list}}
+{{/if}}
 
+{{#if model.groups}}
 <h3>Groups (artists):</h3>
 {{#each-list list=model.groups as |artist|}}
   {{link-to artist.name "artist" artist}}
 {{/each-list}}
+{{/if}}
 
 {{#if model.urls}}
 <h3>URLs</h3>
@@ -34,7 +46,7 @@
 {{/if}}
 
 <p>
-  <a href="https://www.discogs.com/artist/{{model.id}}" rel="noopener" target="_blank">View on Discogs</a>
+  <a href="{{model.uri}}" rel="noopener" target="_blank">View on Discogs</a>
 </p>
 
 {{outlet}}
