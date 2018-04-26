@@ -23,5 +23,8 @@ export default Component.extend({
     player.on('playing', () => {
       console.log(this.get('youtubePlayer').getDuration());
     });
+    player.on('error', err => {
+      console.error(err)
+    });
   }
 });
