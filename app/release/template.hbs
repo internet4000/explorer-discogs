@@ -1,8 +1,7 @@
 <p><em>release</em></p>
 <h1>{{model.title}}</h1>
 
-<pre>id: {{model.id}}
-year: {{model.year}}
+<pre>year: {{model.year}}
 country: {{model.country}}
 released: {{model.released}}
 numForSale: {{model.numForSale}}
@@ -29,8 +28,10 @@ lowestPrice: {{model.lowestPrice}}
   {{/each-list}}
 {{/each-list}}
 
+{{#if model.notes}}
 <h3>Notes</h3>
 <p>{{model.notes}}</p>
+{{/if}}
 
 <h3>Videos</h3>
 {{#each-list list=model.videos as |video|}}
@@ -42,10 +43,12 @@ lowestPrice: {{model.lowestPrice}}
   {{link-to artist.name "artist" artist.id}}
 {{/each-list}}
 
+{{#if model.companies}}
 <h3>Companies</h3>
 {{#each-list list=model.companies as |label|}}
   {{link-to label.name "label" label.id}}
 {{/each-list}}
+{{/if}}
 
 {{!-- <p>Images:</p>
 {{#each-list list=model.images as |image|}}
