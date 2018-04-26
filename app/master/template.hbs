@@ -35,8 +35,8 @@ lowestPrice: {{model.lowestPrice}}
 
 <h3>Main release</h3>
 <ul>
-  <li>{{link-to "Main Release" "release" model.mainRelease.id}}</li>
-  <li>view more versions: {{model.versionsUrl}}</li>
+  <li>{{link-to "View main release" "release" model.mainRelease.id}}</li>
+  <li><a href="{{model.versionsUrl}}" rel="noopener" target="_blank">View more versions</a></li>
 </ul>
 
 {{outlet}}
