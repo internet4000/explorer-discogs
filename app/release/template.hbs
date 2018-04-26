@@ -43,6 +43,11 @@ lowestPrice: {{model.lowestPrice}}
   {{link-to artist.name "artist" artist.id}}
 {{/each-list}}
 
+<h3>Labels</h3>
+{{#each-list list=model.labels as |label|}}
+  {{link-to label.name "label" label.id}}
+{{/each-list}}
+
 {{#if model.companies}}
 <h3>Companies</h3>
 {{#each-list list=model.companies as |label|}}
