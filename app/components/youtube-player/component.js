@@ -11,7 +11,12 @@ export default Component.extend({
     this._super(...arguments);
 
     const playerDom = this.element.querySelector('#Player');
-    const player = new YTPlayer(playerDom);
+    const player = new YTPlayer(playerDom, {
+      annotations: false,
+      info: false,
+      related: false,
+      modestBranding: false
+    });
 
     this.set('youtubePlayer', player);
 
