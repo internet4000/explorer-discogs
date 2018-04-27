@@ -28,15 +28,15 @@ lowestPrice: {{model.lowestPrice}}
   {{/each-list}}
 {{/each-list}}
 
+<h3>Videos</h3>
+{{#each-list list=model.videos as |video|}}
+  {{track-video model=video}}
+{{/each-list}}
+
 {{#if model.notes}}
 <h3>Notes</h3>
 <p>{{model.notes}}</p>
 {{/if}}
-
-<h3>Videos</h3>
-{{#each-list list=model.videos as |video|}}
-  <a href="{{video.uri}}">{{video.title}}</a>
-{{/each-list}}
 
 <h3>Artists</h3>
 {{#each-list list=model.artists as |artist|}}
