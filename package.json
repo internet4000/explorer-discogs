@@ -18,6 +18,7 @@
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
+    "ember-browserify": "^1.2.2",
     "ember-cli": "~3.1.2",
     "ember-cli-app-version": "^3.0.0",
     "ember-cli-babel": "^6.6.0",
@@ -42,5 +43,9 @@
   },
   "engines": {
     "node": "^4.5 || 6.* || >= 7.*"
+  },
+  "dependencies": {
+    "youtube-regex": "^1.0.5",
+    "yt-player": "^2.6.0"
   }
 }
