@@ -26,5 +26,10 @@ export default Component.extend({
     player.on('error', err => {
       console.error(err)
     });
+  },
+
+  willDestroyElement() {
+    this.get('youtubePlayer').destroy()
+    this._super(...arguments)
   }
 });
