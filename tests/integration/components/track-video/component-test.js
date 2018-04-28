@@ -8,6 +8,7 @@ module('Integration | Component | track-video', function(hooks) {
 
   test('it renders', async function(assert) {
     await render(hbs`{{track-video}}`);
-    assert.equal(this.element.textContent.trim(), 'Play');
+
+    assert.ok(this.element.querySelector('button'));
   });
 });

@@ -24,6 +24,6 @@ export default Serializer.extend({
 
     let normalizedPayload = extractUrls(newPayload);
 
-    return this._super(store, primaryModelClass, newPayload, id, requestType)
+    return this._super(store, primaryModelClass, normalizedPayload, id, requestType)
   }
 })
