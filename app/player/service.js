@@ -3,6 +3,8 @@ import Service from '@ember/service';
 export default Service.extend({
   currentTrack: undefined,
   youtubePlayer: undefined,
+  mediaPlayer: undefined,
+
   play(videoModel) {
     const player = this.get('youtubePlayer')
 
@@ -12,9 +14,7 @@ export default Service.extend({
 
     this.set('currentTrack', videoModel);
   },
-  pause() {
-    this.get('youtubePlayer').pause()
-  },
+
   loadPlaylist(list) {
     this.get('youtubePlayer')._player.loadPlaylist(list)
   }
