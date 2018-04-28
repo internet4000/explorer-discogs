@@ -1,7 +1,7 @@
 import Component from '@ember/component';
 import {inject} from '@ember/service'
 import {youtubeIdFromUrl} from '../../player/service'
-import {schedule} from '@ember/runloop'
+import {later} from '@ember/runloop'
 
 export default Component.extend({
   tagName: 'button',
@@ -14,7 +14,7 @@ export default Component.extend({
     const ids = this.playlist.map(p => youtubeIdFromUrl(p.uri))
     // Start the player
     this.player.play(this.playlist[0])
-    setTimeout(() => {
+    later(() => {
       this.player.loadPlaylist(ids)
     }, 1000)
   }
