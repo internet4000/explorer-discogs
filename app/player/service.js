@@ -6,16 +6,28 @@ export default Service.extend({
   mediaPlayer: undefined,
 
   play(videoModel) {
-    const player = this.get('youtubePlayer')
 
-    if (videoModel.provider === 'youtube') {
-      player.load(videoModel.providerId, true);
-    }
+    // prepare the track for the player
+    let track = Object.assign({}, {
+      id: videoModel.id,
+      title: videoModel.title,
+      url: videoModel.uri,
+      ytid: videoModel.providerId
+      // body: '',
+      // channel: '',
+      // created: '',
+    })
+
+    let release = videoModel.get('release');
+    debugger;
 
     this.set('currentTrack', videoModel);
   },
+  pause() {
+    this.get('youtubePlayer').pause();
+  },
+  loadPlaylistInPlayer(playlist) {
+    this.get('mediaPlayer').player.updatePlaylist(playlist);
+	}
 
-  loadPlaylist(list) {
-    this.get('youtubePlayer')._player.loadPlaylist(list)
-  }
 });
