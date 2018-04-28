@@ -3,12 +3,16 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-module('Integration | Component | track-video', function(hooks) {
+module('Integration | Component | button-play-all', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    await render(hbs`{{track-video}}`);
+    await render(hbs`
+      {{#button-play-all}}
+        template block text
+      {{/button-play-all}}
+    `);
 
-    assert.ok(this.element.querySelector('button'));
+    assert.equal(this.element.textContent.trim(), 'template block text');
   });
 });

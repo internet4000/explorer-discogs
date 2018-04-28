@@ -1,27 +1,55 @@
 import Service from '@ember/service';
-import youtubeRegex from 'npm:youtube-regex';
-
-const youtubeIdFromUrl = (url) => {
-  const results = youtubeRegex().exec(url);
-	if (!results) {
-		return false;
-	}
-	return results[1];
-};
+import { bool } from '@ember/object/computed';
 
 export default Service.extend({
   currentTrack: undefined,
   youtubePlayer: undefined,
-  play(model) {
-    const player = this.get('youtubePlayer')
-    if (!model) {
-      player.play()
-      return
-    }
-    player.load(youtubeIdFromUrl(model.uri), true);
-    this.set('currentTrack', model);
+  mediaPlayer: undefined,
+
+  hasTrack: bool('currentTrack'),
+
+  play: function async (videoModel) {
+    this.playTrack(videoModel);
   },
-  pause() {
-    this.get('youtubePlayer').pause()
-  }
+
+  playTrack: async function (videoModel) {
+    let playlist = await this.buildPlaylistExport(videoModel);
+    this.loadPlaylistInPlayer(playlist);
+    this.set('currentTrack', videoModel);
+  },
+
+  buildPlaylistExport: async function (videoModel) {
+    let release = await videoModel.get('release');
+    let releaseVideos = await release.get('videos');
+
+    let playlist = {
+      title: `${release.title} - ${release.artistsSort}`,
+      image: release.get('images')[0].uri150,
+      tracks: releaseVideos.map(this.serializeVideo).reverse()
+    };
+
+    return playlist;
+  },
+
+  serializeVideo(videoModel) {
+
+    let serializedItem = videoModel.serialize({
+      includeId: true
+    });
+
+    let { id, title, url } = serializedItem;
+
+    return {
+      id,
+      title,
+      url,
+      ytid: serializedItem.providerId
+    }
+
+  },
+
+  loadPlaylistInPlayer(playlist) {
+    this.get('mediaPlayer').updatePlaylist(playlist);
+	}
+
 });

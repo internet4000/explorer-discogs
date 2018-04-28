@@ -7,24 +7,29 @@ export default Component.extend({
   player: service(),
   youtubePlayer: alias('player.youtubePlayer'),
   currentTrack: alias('player.currentTrack'),
+
   didInsertElement() {
     this._super(...arguments);
 
     const playerDom = this.element.querySelector('#Player');
     const player = new YTPlayer(playerDom, {
       annotations: false,
-      info: false,
       related: false,
       modestBranding: false
     });
 
     this.set('youtubePlayer', player);
 
-    player.on('playing', () => {
-      console.log(this.get('youtubePlayer').getDuration());
-    });
-    player.on('error', err => {
-      console.error(err)
-    });
+    // player.on('playing', () => {
+    //   console.log(this.get('youtubePlayer').getDuration());
+    // });
+    // player.on('error', err => {
+    //   console.error(err)
+    // });
+  },
+
+  willDestroyElement() {
+    this.get('youtubePlayer').destroy()
+    this._super(...arguments)
   }
 });

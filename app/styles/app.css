@@ -48,3 +48,20 @@ nav {
 nav > * + * {
   margin-left: 1em;
 }
+
+.MediaPlayer {
+  position: fixed;
+	z-index: 2;
+	bottom: 0;
+  right: 1rem;
+  height: 25rem;
+  width: 15rem;
+  display: none;
+}
+.MediaPlayer.is--active {
+  display: block;
+}
+
+.MediaPlayer radio4000-player {
+  height: 100%;
+}
