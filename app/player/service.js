@@ -1,9 +1,12 @@
 import Service from '@ember/service';
+import { bool } from '@ember/object/computed';
 
 export default Service.extend({
   currentTrack: undefined,
   youtubePlayer: undefined,
   mediaPlayer: undefined,
+
+  hasTrack: bool('currentTrack'),
 
   play: function async (videoModel) {
     this.playTrack(videoModel);

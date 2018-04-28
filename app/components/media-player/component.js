@@ -1,11 +1,14 @@
 import Component from '@ember/component';
 import 'npm:radio4000-player';
 import { inject as service } from '@ember/service';
+import { readOnly } from '@ember/object/computed';
 
 export default Component.extend({
   tagName: 'div',
   classNames: ['MediaPlayer'],
+  classNameBindings: ['hasTrack:is--active'],
   player: service(),
+  hasTrack: readOnly('player.hasTrack'),
   didInsertElement() {
     this._super(...arguments);
 
