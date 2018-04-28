@@ -12,12 +12,17 @@
 {{/if}}
 
 {{#if model.namevariations}}
-<h3>Name variations</h3>
-{{each-list list=model.namevariations}}
+  <h3>Name variations</h3>
+  {{each-list list=model.namevariations}}
 {{/if}}
 
-<h3>Releases</h3>
-<p>releasesUrl: {{model.releasesUrl}}</p>
+{{#if model.artistReleases}}
+  <h3>Releases</h3>
+  <p>releasesUrl: {{model.releasesUrl}}</p>
+  {{#each-list list=model.artistReleases.releases as |item|}}
+    {{link-to item.title "release" item.id}}
+  {{/each-list}}
+{{/if}}
 
 {{#if model.members}}
 <h3>Members (artists)</h3>

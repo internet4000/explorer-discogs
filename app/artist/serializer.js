@@ -1,5 +1,11 @@
 import Serializer from '../application/serializer'
 
+const extractUrls = (payload) => {
+  return Object.assign(payload, {
+    artistReleases: payload.id
+  });
+};
+
 export default Serializer.extend({
   normalizeFindRecordResponse(store, primaryModelClass, payload, id, requestType) {
     let newPayload = payload
@@ -15,6 +21,8 @@ export default Serializer.extend({
     if (payload.groups) {
       newPayload.groups = payload.groups.map(artist => artist.id)
     }
+
+    let normalizedPayload = extractUrls(newPayload);
 
     return this._super(store, primaryModelClass, newPayload, id, requestType)
   }
