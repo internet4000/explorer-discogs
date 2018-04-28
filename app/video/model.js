@@ -6,5 +6,8 @@ export default DS.Model.extend({
   uri: DS.attr('string'),
   duration: DS.attr('number'),
   embed: DS.attr('boolean'),
-  release: DS.belongsTo('release')
+  release: DS.belongsTo('release'),
+
+  provider: DS.attr('string'),
+  providerId: DS.attr('string')
 });

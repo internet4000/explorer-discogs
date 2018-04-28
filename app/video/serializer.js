@@ -14,10 +14,10 @@ export default DS.JSONSerializer.extend({
     let ytid = youtubeIdFromUrl(resourceHash.uri);
     return `youtube:${ytid}`;
   },
-  normalizeSingle(store, payload) {
-    let newItem = Object.assign(payload, {
+  extractAttributes(modelClass, resourceHash) {
+    let newItem = Object.assign(resourceHash, {
       provider: 'youtube',
-      providerId: `${ytid}`
+      providerId: youtubeIdFromUrl(resourceHash.uri)
     });
     return newItem;
   }
