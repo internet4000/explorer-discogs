@@ -20,12 +20,12 @@ export default Component.extend({
 
     this.set('youtubePlayer', player);
 
-    player.on('playing', () => {
-      console.log(this.get('youtubePlayer').getDuration());
-    });
-    player.on('error', err => {
-      console.error(err)
-    });
+    // player.on('playing', () => {
+    //   console.log(this.get('youtubePlayer').getDuration());
+    // });
+    // player.on('error', err => {
+    //   console.error(err)
+    // });
   },
 
   willDestroyElement() {
