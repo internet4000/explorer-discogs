@@ -29,6 +29,7 @@ lowestPrice: {{model.lowestPrice}}
 {{/each-list}}
 
 <h3>Videos</h3>
+<p>{{button-play-all playlist=model.videos}}</p>
 {{#each-list list=model.videos as |video|}}
   {{track-video model=video}}
 {{/each-list}}

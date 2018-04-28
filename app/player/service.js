@@ -1,7 +1,7 @@
 import Service from '@ember/service';
 import youtubeRegex from 'npm:youtube-regex';
 
-const youtubeIdFromUrl = (url) => {
+export const youtubeIdFromUrl = (url) => {
   const results = youtubeRegex().exec(url);
 	if (!results) {
 		return false;
@@ -23,5 +23,8 @@ export default Service.extend({
   },
   pause() {
     this.get('youtubePlayer').pause()
+  },
+  loadPlaylist(list) {
+    this.get('youtubePlayer')._player.loadPlaylist(list)
   }
 });
