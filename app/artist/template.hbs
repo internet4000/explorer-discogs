@@ -6,14 +6,21 @@
   <p>{{model.realname}}</p>
 {{/if}}
 
+{{#if model.namevariations}}
+  <details>
+    <summary>Show name variations</summary>
+    {{each-list list=model.namevariations}}
+  </details>
+{{/if}}
+
 {{#if model.profile}}
 <h3>Profile</h3>
 <p>{{model.profile}}</p>
 {{/if}}
 
-{{#if model.namevariations}}
-  <h3>Name variations</h3>
-  {{each-list list=model.namevariations}}
+{{#if model.urls}}
+<h3>URLs</h3>
+{{each-list list=model.urls}}
 {{/if}}
 
 {{#if model.artistReleases}}
@@ -43,11 +50,6 @@
 {{#each-list list=model.groups as |artist|}}
   {{link-to artist.name "artist" artist}}
 {{/each-list}}
-{{/if}}
-
-{{#if model.urls}}
-<h3>URLs</h3>
-{{each-list list=model.urls}}
 {{/if}}
 
 <p>
