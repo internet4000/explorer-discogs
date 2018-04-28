@@ -6,8 +6,7 @@ export default Service.extend({
   play(videoModel) {
     const player = this.get('youtubePlayer')
 
-
-    if(videoModel.provider === 'youtube') {
+    if (videoModel.provider === 'youtube') {
       player.load(videoModel.providerId, true);
     }
 
@@ -15,5 +14,8 @@ export default Service.extend({
   },
   pause() {
     this.get('youtubePlayer').pause()
+  },
+  loadPlaylist(list) {
+    this.get('youtubePlayer')._player.loadPlaylist(list)
   }
 });

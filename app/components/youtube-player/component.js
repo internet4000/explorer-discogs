@@ -7,13 +7,13 @@ export default Component.extend({
   player: service(),
   youtubePlayer: alias('player.youtubePlayer'),
   currentTrack: alias('player.currentTrack'),
+
   didInsertElement() {
     this._super(...arguments);
 
     const playerDom = this.element.querySelector('#Player');
     const player = new YTPlayer(playerDom, {
       annotations: false,
-      info: false,
       related: false,
       modestBranding: false
     });
