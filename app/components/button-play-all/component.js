@@ -1,6 +1,5 @@
 import Component from '@ember/component';
 import {inject} from '@ember/service'
-import {youtubeIdFromUrl} from '../../player/service'
 import {later} from '@ember/runloop'
 
 export default Component.extend({
@@ -11,9 +10,9 @@ export default Component.extend({
 
   click() {
     // Convert to an array of ids
-    const ids = this.playlist.map(p => youtubeIdFromUrl(p.uri))
+    const ids = this.playlist.map(p => p.providerId)
     // Start the player
-    this.player.play(this.playlist[0])
+    this.player.play(this.get('playlist.firstObject'))
     later(() => {
       this.player.loadPlaylist(ids)
     }, 1000)
