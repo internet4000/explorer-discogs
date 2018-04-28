@@ -6,7 +6,8 @@ export default Service.extend({
   play(videoModel) {
     const player = this.get('youtubePlayer')
 
-    if(this.get('model.provider') === 'youtube') {
+
+    if(videoModel.provider === 'youtube') {
       player.load(videoModel.providerId, true);
     }
 
