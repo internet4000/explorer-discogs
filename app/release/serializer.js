@@ -1,6 +1,5 @@
 import DS from 'ember-data';
 import Serializer from '../application/serializer'
-import VideoSerializer from '../video/serializer'
 
 const { EmbeddedRecordsMixin } = DS;
 
