@@ -8,7 +8,6 @@ export default DS.Model.extend({
   // status: DS.attr('string'),
   // thumb: DS.attr(),
   artists: DS.attr(),
-  // artists: DS.hasMany('artist', {async: true}),
   artistsSort: DS.attr('string'),
   companies: DS.attr(),
   country: DS.attr('string'),
@@ -17,9 +16,7 @@ export default DS.Model.extend({
   images: DS.attr(),
   labels: DS.attr(),
   lowestPrice: DS.attr('number'),
-  mainRelease: DS.belongsTo('release', {async: true}),
   mainReleaseUrl: DS.attr('string'),
-  masterId: DS.belongsTo('master'),
   masterUrl: DS.attr('string'),
   notes: DS.attr('string'),
   numForSale: DS.attr('number'),
@@ -29,6 +26,11 @@ export default DS.Model.extend({
   title: DS.attr('string'),
   tracklist: DS.attr(),
   uri: DS.attr('string'),
-  videos: DS.attr(),
   year: DS.attr('number'),
+
+  // Relations
+  videos: DS.hasMany('video'),
+  mainRelease: DS.belongsTo('release', {async: true}),
+  masterId: DS.belongsTo('master'),
+  // artists: DS.hasMany('artist', {async: true}),
 });

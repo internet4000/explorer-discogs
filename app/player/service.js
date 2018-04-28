@@ -1,24 +1,12 @@
 import Service from '@ember/service';
-import youtubeRegex from 'npm:youtube-regex';
-
-const youtubeIdFromUrl = (url) => {
-  const results = youtubeRegex().exec(url);
-	if (!results) {
-		return false;
-	}
-	return results[1];
-};
 
 export default Service.extend({
   currentTrack: undefined,
   youtubePlayer: undefined,
-  play(model) {
+  play(playlist, id) {
     const player = this.get('youtubePlayer')
-    if (!model) {
-      player.play()
-      return
-    }
-    player.load(youtubeIdFromUrl(model.uri), true);
+
+    player.load(id, true);
     this.set('currentTrack', model);
   },
   pause() {
