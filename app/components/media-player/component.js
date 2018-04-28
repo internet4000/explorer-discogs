@@ -1,5 +1,5 @@
 import Component from '@ember/component';
-import Radio4000 from 'npm:radio4000-player';
+import 'npm:radio4000-player';
 import { inject as service } from '@ember/service';
 
 export default Component.extend({
