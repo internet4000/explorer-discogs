@@ -2,6 +2,7 @@ import Component from '@ember/component';
 import 'npm:radio4000-player';
 import { inject as service } from '@ember/service';
 import { readOnly } from '@ember/object/computed';
+import {later} from '@ember/runloop'
 
 export default Component.extend({
   tagName: 'div',
@@ -14,10 +15,11 @@ export default Component.extend({
 
     let playerDom = this.element.querySelector('radio4000-player');
 
-    // get the js instance of the <radio4000-player> dom el
-    let vue = playerDom.__vue_custom_element__.$children[0];
-    this.set('player.mediaPlayer', vue);
-
-    // vue.updatePlaylist(playlist);
+    // Firefox needed this wrapper
+    later(() => {
+      // Get the JS instance of the Vue app from <radio4000-player> element
+      let vue = playerDom.__vue_custom_element__.$children[0];
+      this.set('player.mediaPlayer', vue);
+    }, 16)
   }
 });
