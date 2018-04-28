@@ -12,15 +12,6 @@ module('Integration | Component | media-player', function(hooks) {
 
     await render(hbs`{{media-player}}`);
 
-    assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      {{#media-player}}
-        template block text
-      {{/media-player}}
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.ok(this.element.querySelector('radio4000-player'));
   });
 });

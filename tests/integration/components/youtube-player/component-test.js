@@ -8,6 +8,7 @@ module('Integration | Component | youtube-player', function(hooks) {
 
   test('it renders', async function(assert) {
     await render(hbs`{{youtube-player}}`);
-    assert.ok(true)
+
+    assert.ok(this.element.querySelector('#Player'));
   });
 });
