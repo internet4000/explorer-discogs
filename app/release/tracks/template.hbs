@@ -8,12 +8,4 @@
   {{/each-list}}
 {{/each-list}}
 
-<p>
-  Videos
-  <span>{{button-play-all playlist=model.videos}}</span>
-</p>
-{{#each-list list=model.videos as |video|}}
-  {{track-video model=video}}
-{{/each-list}}
-
 {{outlet}}

@@ -2,6 +2,9 @@
 
 {{#each-list list=model.releases as |item|}}
   {{link-to item.title "release" item.id}}
+  {{#if item.videos}}
+    {{play-release release=item}}
+  {{/if}}
 {{/each-list}}
 
 {{outlet}}

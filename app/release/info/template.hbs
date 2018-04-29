@@ -1,23 +1,37 @@
-<h3>Artists</h3>
-<span>({{model.artistsSort}})</span>
-{{#each-list list=model.artists as |artist|}}
-  {{link-to artist.name "artist" artist.id}}
-{{/each-list}}
-
-<h3>Infos</h3>
 <ul>
-  <li>year: {{model.year}}</li>
-  <li>country: {{model.country}}</li>
-  <li>released: {{model.released}}</li>
   <li>
-    Genres
-    {{each-list list=model.genres}}
+    Artists:
+    {{#each model.artists as |artist|}}
+      {{link-to artist.name "artist" artist.id}}
+    {{/each}}
+  </li>
+  <li>released: {{model.year}} — {{model.released}}</li>
+  <li>country: {{model.country}}</li>
+  <li>
+    Genres:
+    {{#each model.genres as |item|}}
+      {{item}}
+    {{/each}}
   </li>
   <li>
-    Styles
-    {{each-list list=model.styles}}
+    Styles:
+    {{#each model.styles as |item|}}
+      {{item}}
+    {{/each}}
   </li>
 </ul>
+
+<h3>Labels</h3>
+{{#each-list list=model.labels as |label|}}
+  {{link-to label.name "label" label.id}}
+{{/each-list}}
+
+{{#if model.companies}}
+  <h3>Companies associated</h3>
+  {{#each-list list=model.companies as |label|}}
+    {{link-to label.name "label" label.id}}
+  {{/each-list}}
+{{/if}}
 
 {{#if model.notes}}
   <h3>Notes</h3>

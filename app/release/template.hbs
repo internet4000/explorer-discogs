@@ -3,9 +3,16 @@
     title=model.title}}
 
 <nav>
-  {{link-to 'Tracks' 'release.tracks'}}
-  {{link-to 'Profile' 'release.info'}}
-  {{link-to 'Labels' 'release.labels'}}
+  {{link-to 'Info' 'release.info'}}
+  {{#link-to 'release.tracks'}}
+    Tracks ({{model.tracklist.length}})
+  {{/link-to}}
+  {{#if model.videos}}
+    {{#link-to 'release.videos'}}
+      Videos ({{model.videos.length}})
+    {{/link-to}}
+    {{play-release release=model}}
+  {{/if}}
 </nav>
 
 {{outlet}}

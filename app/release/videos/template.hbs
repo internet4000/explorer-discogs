@@ -1,0 +1,7 @@
+{{#if model.videos}}
+  {{#each-list list=model.videos as |video|}}
+    {{track-video model=video}}
+  {{/each-list}}
+{{/if}}
+
+{{outlet}}
