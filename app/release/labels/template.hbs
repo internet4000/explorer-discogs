@@ -1,0 +1,12 @@
+{{#each-list list=model.labels as |label|}}
+  {{link-to label.name "label" label.id}}
+{{/each-list}}
+
+{{#if model.companies}}
+  <h3>Companies associated</h3>
+  {{#each-list list=model.companies as |label|}}
+    {{link-to label.name "label" label.id}}
+  {{/each-list}}
+{{/if}}
+
+{{outlet}}

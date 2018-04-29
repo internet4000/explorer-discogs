@@ -1,0 +1,41 @@
+<h3>Artists</h3>
+<span>({{model.artistsSort}})</span>
+{{#each-list list=model.artists as |artist|}}
+  {{link-to artist.name "artist" artist.id}}
+{{/each-list}}
+
+<h3>Infos</h3>
+<ul>
+  <li>year: {{model.year}}</li>
+  <li>country: {{model.country}}</li>
+  <li>released: {{model.released}}</li>
+  <li>
+    Genres
+    {{each-list list=model.genres}}
+  </li>
+  <li>
+    Styles
+    {{each-list list=model.styles}}
+  </li>
+</ul>
+
+{{#if model.notes}}
+  <h3>Notes</h3>
+  <p>{{model.notes}}</p>
+{{/if}}
+
+{{!-- <p>Images:</p>
+      {{#each-list list=model.images as |image|}}
+      {{image.uri}}
+      {{image.height}}
+      {{image.width}}
+      {{image.resourceUrl}}
+      {{image.type}}
+      {{image.uri150}}
+      {{/each}} --}}
+
+<p>
+  {{link-to-discogs url=model.discogsHumanUrl}}
+</p>
+
+{{outlet}}
