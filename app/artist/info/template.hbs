@@ -29,21 +29,3 @@
     {{each-list list=model.namevariations}}
   </details>
 {{/if}}
-
-{{#if model.aliases}}
-  <h3>Aliases (artists)</h3>
-  {{#each-list list=model.aliases as |artist|}}
-    {{link-to artist.name "artist" artist}}
-  {{/each-list}}
-{{/if}}
-
-{{#if model.groups}}
-  <h3>Groups (artists):</h3>
-  {{#each-list list=model.groups as |artist|}}
-    {{link-to artist.name "artist" artist}}
-  {{/each-list}}
-{{/if}}
-
-<p>
-  <a href="{{model.uri}}" rel="noopener" target="_blank">View on Discogs</a>
-</p>
