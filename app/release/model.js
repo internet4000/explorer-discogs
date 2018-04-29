@@ -1,4 +1,5 @@
 import DS from 'ember-data';
+import { computed } from '@ember/object';
 
 export default DS.Model.extend({
   // community: DS.attr(),
@@ -33,4 +34,8 @@ export default DS.Model.extend({
   mainRelease: DS.belongsTo('release', {async: true}),
   masterId: DS.belongsTo('master'),
   // artists: DS.hasMany('artist', {async: true}),
+
+  discogsHumanUrl: computed('id', function() {
+    return `https://discogs.com/release/${this.get('id')}`;
+  })
 });

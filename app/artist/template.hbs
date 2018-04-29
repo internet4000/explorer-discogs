@@ -52,8 +52,6 @@
 {{/each-list}}
 {{/if}}
 
-<p>
-  <a href="{{model.uri}}" rel="noopener" target="_blank">View on Discogs</a>
-</p>
+{{link-to-discogs url=model.discogsHumanUrl}}
 
 {{outlet}}

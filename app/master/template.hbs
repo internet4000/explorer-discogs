@@ -42,5 +42,5 @@ lowestPrice: {{model.lowestPrice}}
 {{outlet}}
 
 <p>
-  <a href="https://www.discogs.com/master/{{model.id}}" rel="noopener" target="_blank">View on Discogs</a>
+  {{link-to-discogs url=model.discogsHumanUrl}}
 </p>

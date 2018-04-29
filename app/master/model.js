@@ -1,4 +1,5 @@
 import DS from 'ember-data';
+import { computed } from '@ember/object';
 
 export default DS.Model.extend({
   // artists: DS.hasMany('artist'),
@@ -18,4 +19,8 @@ export default DS.Model.extend({
   versionsUrl: DS.attr('string'),
   videos: DS.attr(),
   year: DS.attr('number'),
+
+  discogsHumanUrl: computed('id', function() {
+    return `https://discogs.com/master/${this.get('id')}`;
+  })
 });

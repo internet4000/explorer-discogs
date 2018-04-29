@@ -67,7 +67,7 @@ lowestPrice: {{model.lowestPrice}}
 {{/each}} --}}
 
 <p>
-  <a href="{{model.uri}}" rel="noopener" target="_blank">View on Discogs</a>
+  {{link-to-discogs url=model.discogsHumanUrl}}
 </p>
 
 {{outlet}}
