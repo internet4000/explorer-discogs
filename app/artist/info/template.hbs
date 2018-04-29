@@ -6,7 +6,9 @@
 
 {{#if model.urls}}
   <h3>URLs</h3>
-  {{each-list list=model.urls}}
+  {{#each-list list=model.urls as |url|}}
+    {{link-to-external url=url text=url}}
+  {{/each-list}}
 {{/if}}
 
 {{#if model.members}}

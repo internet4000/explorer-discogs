@@ -1,6 +1,7 @@
-import Component from '@ember/component';
+import LinkToExternal from '../link-to-external/component';
+import layout from '../link-to-external/template';
 
-export default Component.extend({
-  tagName: 'p',
-  url: undefined
+export default LinkToExternal.extend({
+  text: 'View on Discogs',
+  layout
 });
