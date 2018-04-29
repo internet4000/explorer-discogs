@@ -1,0 +1,5 @@
+{{#each-list list=model.releases as |item|}}
+  {{link-to item.title "release" item.id}}
+{{/each-list}}
+
+{{outlet}}

@@ -1,57 +1,10 @@
-<p><em>artist</em></p>
 <h1>{{model.name}}</h1>
 
-{{#if model.realname}}
-  <h3>Real name</h3>
-  <p>{{model.realname}}</p>
-{{/if}}
-
-{{#if model.namevariations}}
-  <details>
-    <summary>Show name variations</summary>
-    {{each-list list=model.namevariations}}
-  </details>
-{{/if}}
-
-{{#if model.profile}}
-<h3>Profile</h3>
-<p>{{model.profile}}</p>
-{{/if}}
-
-{{#if model.urls}}
-<h3>URLs</h3>
-{{each-list list=model.urls}}
-{{/if}}
-
-{{#if model.artistReleases}}
-  <h3>Releases</h3>
-  <p>releasesUrl: {{model.releasesUrl}}</p>
-  {{#each-list list=model.artistReleases.releases as |item|}}
-    {{link-to item.title "release" item.id}}
-  {{/each-list}}
-{{/if}}
-
-{{#if model.members}}
-<h3>Members (artists)</h3>
-{{#each-list list=model.members as |artist|}}
-  {{link-to artist.name "artist" artist}}
-{{/each-list}}
-{{/if}}
-
-{{#if model.aliases}}
-<h3>Aliases (artists)</h3>
-{{#each-list list=model.aliases as |artist|}}
-  {{link-to artist.name "artist" artist}}
-{{/each-list}}
-{{/if}}
-
-{{#if model.groups}}
-<h3>Groups (artists):</h3>
-{{#each-list list=model.groups as |artist|}}
-  {{link-to artist.name "artist" artist}}
-{{/each-list}}
-{{/if}}
-
-{{link-to-discogs url=model.discogsHumanUrl}}
+<nav>
+  {{link-to 'Releases' 'artist.releases'}}
+  {{link-to 'Profile' 'artist.info'}}
+</nav>
 
 {{outlet}}
+
+{{link-to-discogs url=model.discogsHumanUrl}}

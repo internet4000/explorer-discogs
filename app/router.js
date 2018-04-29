@@ -12,7 +12,10 @@ Router.map(function() {
     this.route('info');
   });
   this.route('release', {path: 'releases/:release_id'});
-  this.route('artist', {path: 'artists/:artist_id'});
+  this.route('artist', {path: 'artists/:artist_id'}, function() {
+    this.route('releases', { path: '/'});
+    this.route('info');
+  });
   this.route('master', {path: 'masters/:master_id'});
   this.route('search');
 });
