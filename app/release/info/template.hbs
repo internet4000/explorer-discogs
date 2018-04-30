@@ -22,13 +22,13 @@
 </ul>
 
 <h3>Labels</h3>
-{{#each-list list=model.labels as |label|}}
+{{#each-list model.labels as |label|}}
   {{link-to label.name "label" label.id}}
 {{/each-list}}
 
 {{#if model.companies}}
   <h3>Companies associated</h3>
-  {{#each-list list=model.companies as |label|}}
+  {{#each-list model.companies as |label|}}
     {{link-to label.name "label" label.id}}
   {{/each-list}}
 {{/if}}
@@ -39,7 +39,7 @@
 {{/if}}
 
 {{!-- <p>Images:</p>
-      {{#each-list list=model.images as |image|}}
+      {{#each-list model.images as |image|}}
       {{image.uri}}
       {{image.height}}
       {{image.width}}

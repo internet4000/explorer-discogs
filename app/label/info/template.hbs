@@ -10,13 +10,13 @@
 
 {{#if model.sublabels}}
   <h3>Sublabels</h3>
-  {{#each-list list=model.sublabels as |label|}}
+  {{#each-list model.sublabels as |label|}}
       {{link-to label.name "label" label}}
 {{/each-list}}
 {{/if}}
 
 <h3>URLs</h3>
-{{#each-list list=model.urls as |item|}}
+{{#each-list model.urls as |item|}}
   {{link-to-external text=item url=item}}
 {{/each-list}}
 

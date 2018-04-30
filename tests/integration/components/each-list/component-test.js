@@ -9,12 +9,12 @@ module('Integration | Component | each-list', function(hooks) {
   test('it renders', async function(assert) {
     this.set('items', ['a', 'b', 'c'])
 
-    await render(hbs`{{each-list list=items}}`);
+    await render(hbs`{{each-list items}}`);
     assert.equal(this.element.querySelectorAll('li')[1].textContent.trim(), 'b');
 
     // Template block usage:
     await render(hbs`
-      {{#each-list list=items as |item|}}
+      {{#each-list items as |item|}}
         <b>{{item}}</b>
       {{/each-list}}
     `);
