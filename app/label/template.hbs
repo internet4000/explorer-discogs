@@ -1,13 +1,12 @@
-<p><em>label</em></p>
-<h1>{{model.name}}</h1>
+{{resource-head
+    type="label"
+    title=model.name}}
 
 <nav>
   {{link-to 'Releases' 'label.releases'}}
-  {{link-to 'Profile' 'label.info'}}
+  {{link-to 'Info' 'label.info'}}
 </nav>
 
 {{outlet}}
 
-<p>
-  <a href="https://www.discogs.com/label/{{model.id}}" rel="noopener" target="_blank">View on Discogs</a>
-</p>
+{{link-to-discogs url=model.discogsHumanUrl}}

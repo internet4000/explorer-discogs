@@ -1,9 +1,12 @@
-body {
-  margin: 3vw;
+html {
   font-size: 14px;
   line-height: 1.5;
   font-family: system-ui, segoe ui, sans-serif;
   color: black;
+}
+
+body {
+  margin: 3vw;
   background: hsl(0, 0%, 96%);
 }
 
@@ -20,7 +23,8 @@ h1,
 h2,
 h3,
 h4,
-p {
+p,
+summary {
   margin-top: 1em;
   margin-bottom: 1em;
 }
@@ -33,6 +37,11 @@ a:visited {
 a.active {
   text-decoration: none;
   background: gold;
+}
+
+a sup {
+  display: inline-block;
+  text-decoration: none;
 }
 
 ul {
@@ -54,14 +63,25 @@ nav > * + * {
 	z-index: 2;
 	bottom: 0;
   right: 1rem;
-  height: 25rem;
-  width: 15rem;
+  right: 3vw;
+  width: 17rem;
+  height: 30rem;
   display: none;
 }
+
 .MediaPlayer.is--active {
   display: block;
 }
 
 .MediaPlayer radio4000-player {
   height: 100%;
+}
+
+radio4000-player .Header-body {
+  font-size: 1rem;
+}
+
+radio4000-player .Header-media img {
+  height: 100%;
+  object-fit: cover;
 }

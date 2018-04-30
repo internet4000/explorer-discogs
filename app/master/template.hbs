@@ -1,5 +1,6 @@
-<p><em>master</em></p>
-<h1>{{model.title}}</h1>
+{{resource-head
+    type="master"
+    title=model.title}}
 
 <pre>year: {{model.year}}
 numForSale: {{model.numForSale}}
@@ -42,5 +43,5 @@ lowestPrice: {{model.lowestPrice}}
 {{outlet}}
 
 <p>
-  <a href="https://www.discogs.com/master/{{model.id}}" rel="noopener" target="_blank">View on Discogs</a>
+  {{link-to-discogs url=model.discogsHumanUrl}}
 </p>

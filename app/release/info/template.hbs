@@ -1,0 +1,55 @@
+<ul>
+  <li>
+    Artists:
+    {{#each model.artists as |artist|}}
+      {{link-to artist.name "artist" artist.id}}
+    {{/each}}
+  </li>
+  <li>released: {{model.year}} — {{model.released}}</li>
+  <li>country: {{model.country}}</li>
+  <li>
+    Genres:
+    {{#each model.genres as |item|}}
+      {{item}}
+    {{/each}}
+  </li>
+  <li>
+    Styles:
+    {{#each model.styles as |item|}}
+      {{item}}
+    {{/each}}
+  </li>
+</ul>
+
+<h3>Labels</h3>
+{{#each-list list=model.labels as |label|}}
+  {{link-to label.name "label" label.id}}
+{{/each-list}}
+
+{{#if model.companies}}
+  <h3>Companies associated</h3>
+  {{#each-list list=model.companies as |label|}}
+    {{link-to label.name "label" label.id}}
+  {{/each-list}}
+{{/if}}
+
+{{#if model.notes}}
+  <h3>Notes</h3>
+  <p>{{model.notes}}</p>
+{{/if}}
+
+{{!-- <p>Images:</p>
+      {{#each-list list=model.images as |image|}}
+      {{image.uri}}
+      {{image.height}}
+      {{image.width}}
+      {{image.resourceUrl}}
+      {{image.type}}
+      {{image.uri150}}
+      {{/each}} --}}
+
+<p>
+  {{link-to-discogs url=model.discogsHumanUrl}}
+</p>
+
+{{outlet}}
