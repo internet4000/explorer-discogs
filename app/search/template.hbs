@@ -1,7 +1,26 @@
+<p>
+  <label>
+  Searching
+  <select onchange={{action (mut type) value="target.value"}}>
+    {{#each types as |t|}}
+      <option value={{t.value}} selected={{eq type t.value}}>
+        {{t.label}}
+      </option>
+    {{/each}}
+  </select>
+  for <em>{{query}}</em>
+  </label>
+</p>
+
 {{#if model}}
   {{#each-list model as |result|}}
-    <em>{{result.type}}</em> {{link-to result.title result.type result.id}}
-    <!-- <img src={{result.thumb}} alt={{result.title}} /> -->
+    {{#unless type}}<em>{{result.type}}</em>{{/unless}}
+    {{link-to result.title result.type result.id}}
+    {{!--
+    {{#if result.thumb}}
+      <img src={{result.thumb}} alt={{result.title}} height="16">
+    {{/if}}
+    --}}
   {{/each-list}}
 
   {{search-pagination
