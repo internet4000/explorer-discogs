@@ -1,4 +1,5 @@
 import DS from 'ember-data';
+import { computed } from '@ember/object';
 
 export default DS.Model.extend({
   dataQuality: DS.attr('string'),
@@ -17,4 +18,8 @@ export default DS.Model.extend({
   resourceUrl: DS.attr('string'),
   uri: DS.attr('string'),
   urls: DS.attr(),
+
+  discogsHumanUrl: computed('id', function() {
+    return `https://discogs.com/artist/${this.get('id')}`;
+  })
 });

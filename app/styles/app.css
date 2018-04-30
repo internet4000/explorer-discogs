@@ -38,6 +38,11 @@ a.active {
   background: gold;
 }
 
+a sup {
+  display: inline-block;
+  text-decoration: none;
+}
+
 ul {
   padding-left: 2em;
 }

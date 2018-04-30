@@ -9,18 +9,15 @@
 {{/if}}
 
 {{#if model.sublabels}}
-<h3>Sublabels</h3>
-{{#each-list list=model.sublabels as |label|}}
-  {{link-to label.name "label" label}}
+  <h3>Sublabels</h3>
+  {{#each-list list=model.sublabels as |label|}}
+      {{link-to label.name "label" label}}
 {{/each-list}}
 {{/if}}
 
 <h3>URLs</h3>
 {{#each-list list=model.urls as |item|}}
-  <a
-    href={{item}}
-    target="_blank"
-    rel="noopener">{{item}}</a>
+  {{link-to-external text=item url=item}}
 {{/each-list}}
 
 <h3>Contact</h3>
