@@ -5,20 +5,10 @@
       {{link-to artist.name "artist" artist.id}}
     {{/each}}
   </li>
-  <li>released: {{model.year}} — {{model.released}}</li>
-  <li>country: {{model.country}}</li>
-  <li>
-    Genres:
-    {{#each model.genres as |item|}}
-      {{item}}
-    {{/each}}
-  </li>
-  <li>
-    Styles:
-    {{#each model.styles as |item|}}
-      {{item}}
-    {{/each}}
-  </li>
+  <li>Released: {{model.year}} — {{model.released}}</li>
+  <li>Country: {{model.country}}</li>
+  <li>Genres: {{each-comma model.genres}}</li>
+  <li>Styles: {{each-comma model.styles}}</li>
 </ul>
 
 <h3>Labels</h3>
