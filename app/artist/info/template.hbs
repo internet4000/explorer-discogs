@@ -6,14 +6,14 @@
 
 {{#if model.urls}}
   <h3>URLs</h3>
-  {{#each-list list=model.urls as |url|}}
+  {{#each-list model.urls as |url|}}
     {{link-to-external url=url text=url}}
   {{/each-list}}
 {{/if}}
 
 {{#if model.members}}
   <h3>Members (artists)</h3>
-  {{#each-list list=model.members as |artist|}}
+  {{#each-list model.members as |artist|}}
     {{link-to artist.name "artist" artist}}
   {{/each-list}}
 {{/if}}
@@ -26,6 +26,6 @@
 {{#if model.namevariations}}
   <details>
     <summary>Show name variations</summary>
-    {{each-list list=model.namevariations}}
+    {{each-list model.namevariations}}
   </details>
 {{/if}}

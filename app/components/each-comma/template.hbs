@@ -1,0 +1,3 @@
+{{#each model as |item index|}}
+  {{#if hasBlock}}{{yield item}}{{else}}{{item}}{{/if}}{{if (eq index count) "" ","}}
+{{/each}}

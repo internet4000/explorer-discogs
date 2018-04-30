@@ -1,5 +1,5 @@
 {{#if model}}
-  {{#each-list list=model as |result|}}
+  {{#each-list model as |result|}}
     <em>{{result.type}}</em> {{link-to result.title result.type result.id}}
     <!-- <img src={{result.thumb}} alt={{result.title}} /> -->
   {{/each-list}}
