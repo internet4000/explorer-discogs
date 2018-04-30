@@ -2,17 +2,15 @@ import Route from '@ember/routing/route';
 
 export default Route.extend({
   queryParams: {
-    search: {
-      refreshModel: true
-    },
-    page: {
-      refreshModel: true
-    }
+    type: {refreshModel: true},
+    query: {refreshModel: true},
+    page: {refreshModel: true}
   },
   model(params) {
-    if (params.search) {
+    console.log(params)
+    if (params.query) {
       return this.get('store').query('searchQuery', {
-        q: params.search,
+        q: params.query,
         page: params.page,
         per_page: params.perPage
       });
