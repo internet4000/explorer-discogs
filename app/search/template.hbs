@@ -12,6 +12,11 @@
 </p>
 
 {{#if model}}
+  {{search-pagination
+    currentPage=page
+    totalPages=totalPages
+    search=search}}
+
   {{#each-list model as |result|}}
     {{#unless type}}<em>{{result.type}}</em>{{/unless}}
     {{link-to result.title result.type result.id}}
