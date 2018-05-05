@@ -1,15 +1,10 @@
+<p>Searching <em>{{type}}s</em> for <strong>{{query}}</strong>.</p>
+
 <p>
-  <label>
-  Searching
-  <select onchange={{action (mut type) value="target.value"}}>
-    {{#each types as |t|}}
-      <option value={{t.value}} selected={{eq type t.value}}>
-        {{t.label}}
-      </option>
-    {{/each}}
-  </select>
-  for <em>{{query}}</em>
-  </label>
+  {{!--
+  {{search-filter type=type ui="buttons"}}
+  --}}
+  {{search-filter type=type ui="radio"}}
 </p>
 
 {{#if model}}
