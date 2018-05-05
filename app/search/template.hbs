@@ -1,4 +1,8 @@
-<p>Searching <em>{{type}}s</em> for <strong>{{query}}</strong>.</p>
+<p>
+  Found {{model.length}}
+  {{#if (eq type "")}}results{{else}}<em>{{type}}s</em>{{/if}}
+  for <strong>{{query}}</strong>.
+</p>
 
 <p>
   {{!--
