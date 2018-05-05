@@ -6,6 +6,7 @@ export default Component.extend({
 
   tagName: 'form',
   query: '',
+  type: '',
 
   submit(event) {
     event.preventDefault()
