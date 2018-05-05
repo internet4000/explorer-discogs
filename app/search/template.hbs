@@ -1,7 +1,25 @@
+<p>
+  Found {{model.length}}
+  {{#if (eq type "")}}results{{else}}<em>{{type}}s</em>{{/if}}
+  for <strong>{{query}}</strong>.
+</p>
+
+<p>
+  {{!--
+  {{search-filter type=type ui="buttons"}}
+  --}}
+  {{search-filter type=type ui="radio"}}
+</p>
+
 {{#if model}}
   {{#each-list model as |result|}}
-    <em>{{result.type}}</em> {{link-to result.title result.type result.id}}
-    <!-- <img src={{result.thumb}} alt={{result.title}} /> -->
+    {{#unless type}}<em>{{result.type}}</em>{{/unless}}
+    {{link-to result.title result.type result.id}}
+    {{!--
+    {{#if result.thumb}}
+      <img src={{result.thumb}} alt={{result.title}} height="16">
+    {{/if}}
+    --}}
   {{/each-list}}
 
   {{search-pagination

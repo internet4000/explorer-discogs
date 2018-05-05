@@ -2,13 +2,19 @@ import Component from '@ember/component';
 import {inject} from '@ember/service'
 
 export default Component.extend({
-  tagName: 'form',
   router: inject(),
-  search: '',
+
+  tagName: 'form',
+  query: '',
+  type: '',
+
   submit(event) {
     event.preventDefault()
     this.get('router').transitionTo('search', {
-      queryParams: {search: this.search}
+      queryParams: {
+        query: this.query,
+        type: this.type
+      }
     })
   }
 });
