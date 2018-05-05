@@ -11,7 +11,10 @@ export default Component.extend({
   submit(event) {
     event.preventDefault()
     this.get('router').transitionTo('search', {
-      queryParams: {query: this.query}
+      queryParams: {
+        query: this.query,
+        type: this.type
+      }
     })
   }
 });
