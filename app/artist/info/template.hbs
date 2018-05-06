@@ -4,6 +4,18 @@
   <p>{{model.profile}}</p>
 {{/if}}
 
+{{#if model.realname}}
+  <h3>Real name</h3>
+  <p>{{model.realname}}</p>
+{{/if}}
+
+{{#if model.namevariations}}
+  <details>
+    <summary>Show all name variations</summary>
+    {{each-list model.namevariations}}
+  </details>
+{{/if}}
+
 {{#if model.urls}}
   <h3>URLs</h3>
   {{#each-list model.urls as |url|}}
@@ -18,14 +30,3 @@
   {{/each-list}}
 {{/if}}
 
-{{#if model.realname}}
-  <h3>Real name</h3>
-  <p>{{model.realname}}</p>
-{{/if}}
-
-{{#if model.namevariations}}
-  <details>
-    <summary>Show name variations</summary>
-    {{each-list model.namevariations}}
-  </details>
-{{/if}}
