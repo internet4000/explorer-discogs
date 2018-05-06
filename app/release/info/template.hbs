@@ -17,9 +17,9 @@
 {{/each-list}}
 
 {{#if model.companies}}
-  <h3>Companies associated</h3>
+  <h3>Companies, etc.</h3>
   {{#each-list model.companies as |label|}}
-    {{link-to label.name "label" label.id}}
+    {{label.entity_type_name}} - {{link-to label.name "label" label.id}}
   {{/each-list}}
 {{/if}}
 
