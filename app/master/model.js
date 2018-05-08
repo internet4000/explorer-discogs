@@ -8,7 +8,7 @@ export default DS.Model.extend({
   genres: DS.attr(),
   images: DS.attr(),
   lowestPrice: DS.attr('number'),
-  mainRelease: DS.belongsTo('release', {async: true}),
+  mainRelease: DS.belongsTo('release', {async: true, inverse: null}),
   mainReleaseUrl: DS.attr('string'),
   numForSale: DS.attr('number'),
   resourceUrl: DS.attr('string'),

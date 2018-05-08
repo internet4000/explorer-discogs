@@ -1,7 +1,8 @@
-<form {{action "submit" search on="submit"}}>
-  {{input
-    type="search"
-    placeholder='Search artists, label or release'
-    value=search}}
-  <button type="submit">Search</button>
-</form>
+{{input
+  type="search"
+  placeholder='Search Discogs…'
+  value=query}}
+
+{{search-filter type=type}}
+
+<button type="submit">Search</button>

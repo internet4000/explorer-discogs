@@ -15,7 +15,8 @@ module.exports = {
     browser: true
   },
   rules: {
-    'no-console': 'warn'
+    'no-console': 'warn',
+    'ember/no-jquery': 'error'
   },
   overrides: [
     // node files
@@ -23,6 +24,7 @@ module.exports = {
       files: [
         'ember-cli-build.js',
         'testem.js',
+        'blueprints/*/index.js',
         'config/**/*.js',
         'lib/*/index.js'
       ],

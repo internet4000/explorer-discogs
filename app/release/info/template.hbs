@@ -5,31 +5,21 @@
       {{link-to artist.name "artist" artist.id}}
     {{/each}}
   </li>
-  <li>released: {{model.year}} — {{model.released}}</li>
-  <li>country: {{model.country}}</li>
-  <li>
-    Genres:
-    {{#each model.genres as |item|}}
-      {{item}}
-    {{/each}}
-  </li>
-  <li>
-    Styles:
-    {{#each model.styles as |item|}}
-      {{item}}
-    {{/each}}
-  </li>
+  <li>Country: {{model.country}}</li>
+  <li>Released: {{model.year}} — {{model.released}}</li>
+  <li>Genres: {{each-comma model.genres}}</li>
+  <li>Styles: {{each-comma model.styles}}</li>
 </ul>
 
 <h3>Labels</h3>
-{{#each-list list=model.labels as |label|}}
+{{#each-list model.labels as |label|}}
   {{link-to label.name "label" label.id}}
 {{/each-list}}
 
 {{#if model.companies}}
-  <h3>Companies associated</h3>
-  {{#each-list list=model.companies as |label|}}
-    {{link-to label.name "label" label.id}}
+  <h3>Companies, etc.</h3>
+  {{#each-list model.companies as |label|}}
+    {{label.entity_type_name}} - {{link-to label.name "label" label.id}}
   {{/each-list}}
 {{/if}}
 
@@ -39,7 +29,7 @@
 {{/if}}
 
 {{!-- <p>Images:</p>
-      {{#each-list list=model.images as |image|}}
+      {{#each-list model.images as |image|}}
       {{image.uri}}
       {{image.height}}
       {{image.width}}

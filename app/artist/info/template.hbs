@@ -4,20 +4,6 @@
   <p>{{model.profile}}</p>
 {{/if}}
 
-{{#if model.urls}}
-  <h3>URLs</h3>
-  {{#each-list list=model.urls as |url|}}
-    {{link-to-external url=url text=url}}
-  {{/each-list}}
-{{/if}}
-
-{{#if model.members}}
-  <h3>Members (artists)</h3>
-  {{#each-list list=model.members as |artist|}}
-    {{link-to artist.name "artist" artist}}
-  {{/each-list}}
-{{/if}}
-
 {{#if model.realname}}
   <h3>Real name</h3>
   <p>{{model.realname}}</p>
@@ -25,7 +11,22 @@
 
 {{#if model.namevariations}}
   <details>
-    <summary>Show name variations</summary>
-    {{each-list list=model.namevariations}}
+    <summary>Show all name variations</summary>
+    {{each-list model.namevariations}}
   </details>
 {{/if}}
+
+{{#if model.urls}}
+  <h3>URLs</h3>
+  {{#each-list model.urls as |url|}}
+    {{link-to-external url=url text=url}}
+  {{/each-list}}
+{{/if}}
+
+{{#if model.members}}
+  <h3>Members (artists)</h3>
+  {{#each-list model.members as |artist|}}
+    {{link-to artist.name "artist" artist}}
+  {{/each-list}}
+{{/if}}
+

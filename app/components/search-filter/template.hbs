@@ -1,0 +1,28 @@
+{{#unless ui}}
+  <select onchange={{action (mut type) value="target.value"}}>
+    {{#each types as |t|}}
+      <option value={{t.value}} selected={{eq type t.value}}>
+      {{t.label}}
+      </option>
+    {{/each}}
+  </select>
+{{/unless}}
+
+{{#if (eq ui "buttons")}}
+  {{#each types as |t|}}
+    <button onclick={{action (mut type) t.value}} class="{{eq type t.value 'active'}}">
+    {{t.label}}
+    </button>
+  {{/each}}
+{{/if}}
+
+{{#if (eq ui "radio")}}
+  {{#each types as |t|}}
+    <label>
+      <input type="radio" name="searchType" checked={{eq type t.value}} value={{t.value}} onclick={{action (mut type) value="target.value"}}>
+      {{t.label}}
+    </label><br>
+  {{/each}}
+{{/if}}
+
+{{yield}}
