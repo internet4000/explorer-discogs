@@ -7,7 +7,6 @@ export default Route.extend({
     page: {refreshModel: true}
   },
   model(params) {
-    console.log(params)
     if (params.query) {
       return this.get('store').query('searchQuery', {
         q: params.query,
