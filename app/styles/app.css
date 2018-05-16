@@ -65,8 +65,8 @@ nav h1 {
 
 .MediaPlayer {
   position: fixed;
-	z-index: 2;
-	bottom: 0;
+  z-index: 2;
+  bottom: 0;
   right: 1rem;
   right: 3vw;
   width: 17rem;
@@ -91,20 +91,16 @@ radio4000-player .Header-media img {
   object-fit: cover;
 }
 
-/**
- * Visually hide an element, but leave it available for screen readers
- * @link https://github.com/h5bp/html5-boilerplate/blob/master/dist/css/main.css
- * @link http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
- */
+/* Visually hide an element, but leave it available for screen readers */
 .ScreenReader {
-	border: 0;
-	clip: rect(0 0 0 0);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	white-space: nowrap;
-	width: 1px;
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
