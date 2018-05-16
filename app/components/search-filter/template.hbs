@@ -1,11 +1,14 @@
 {{#unless ui}}
-  <select onchange={{action (mut type) value="target.value"}}>
-    {{#each types as |t|}}
-      <option value={{t.value}} selected={{eq type t.value}}>
-      {{t.label}}
-      </option>
-    {{/each}}
-  </select>
+  <label>
+    <span class="ScreenReader">Filter</span>
+    <select onchange={{action (mut type) value="target.value"}}>
+      {{#each types as |t|}}
+        <option value={{t.value}} selected={{eq type t.value}}>
+        {{t.label}}
+        </option>
+      {{/each}}
+    </select>
+  </label>
 {{/unless}}
 
 {{#if (eq ui "buttons")}}

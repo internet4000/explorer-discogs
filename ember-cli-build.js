@@ -4,6 +4,12 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
+    emberCliConcat: {
+      js: {
+        concat: true,
+        useAsync: true
+      }
+    },
     vendorFiles: {
       // Disable jQuery.
       'jquery.js': null
