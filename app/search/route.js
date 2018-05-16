@@ -13,7 +13,9 @@ export default Route.extend({
         page: params.page,
         per_page: params.perPage,
         type: params.type
-      });
+      }).catch(err => {
+        console.log(err)
+      })
     }
   }
 });
