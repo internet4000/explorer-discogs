@@ -17,7 +17,7 @@ export default DS.Model.extend({
   tracklist: DS.attr(),
   uri: DS.attr('string'),
   versionsUrl: DS.attr('string'),
-  videos: DS.attr(),
+  videos: DS.hasMany('video'),
   year: DS.attr('number'),
 
   discogsHumanUrl: computed('id', function() {
