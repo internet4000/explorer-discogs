@@ -2,16 +2,13 @@
     type="master"
     title=model.title}}
 
-<pre>year: {{model.year}}
-numForSale: {{model.numForSale}}
-lowestPrice: {{model.lowestPrice}}
-</pre>
-
-<h3>Genres</h3>
-{{each-list model.genres}}
-
-<h3>Styles</h3>
-{{each-list model.styles}}
+<ul>
+  <li>Released: {{model.year}}</li>
+  <li>Genres: {{each-comma model.genres}}</li>
+  <li>Styles: {{each-comma model.styles}}</li>
+  <li>{{model.numForSale}} currently for sale</li>
+  <li>Lowest price: {{model.lowestPrice}}</li>
+</ul>
 
 <h3>Tracklist</h3>
 {{#each-list model.tracklist as |track|}}
@@ -39,14 +36,12 @@ lowestPrice: {{model.lowestPrice}}
   {{link-to artist.name "artist" artist.id}}
 {{/each-list}}
 
-<h3>Main release</h3>
+<h3>Links</h3>
 <ul>
   <li>{{link-to "View main release" "release" model.mainRelease.id}}</li>
-  <li><a href="{{model.versionsUrl}}" rel="noopener" target="_blank">View more versions</a></li>
+  <li>{{link-to-external url=model.versionsUrl text="All versions on the API"}}</li>
+  <li>{{link-to-discogs url=model.discogsHumanUrl}}</li>
 </ul>
 
 {{outlet}}
 
-<p>
-  {{link-to-discogs url=model.discogsHumanUrl}}
-</p>
