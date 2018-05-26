@@ -8,6 +8,7 @@ export default Component.extend({
   text: 'Play',
 
   click() {
-    this.player.play(this.get('release.videos.firstObject'));
+    const firstVideo = this.get('release.videos.firstObject')
+    this.player.play(firstVideo)
   }
 });

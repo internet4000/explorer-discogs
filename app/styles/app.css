@@ -6,7 +6,7 @@ html {
 }
 
 body {
-  margin: 3vw;
+  margin: 2vw 3vw;
   background: hsl(0, 0%, 96%);
 }
 
@@ -58,10 +58,15 @@ nav > * + * {
   margin-left: 1em;
 }
 
+nav h1 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 .MediaPlayer {
   position: fixed;
-	z-index: 2;
-	bottom: 0;
+  z-index: 2;
+  bottom: 0;
   right: 1rem;
   right: 3vw;
   width: 17rem;
@@ -85,3 +90,17 @@ radio4000-player .Header-media img {
   height: 100%;
   object-fit: cover;
 }
+
+/* Visually hide an element, but leave it available for screen readers */
+.ScreenReader {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+

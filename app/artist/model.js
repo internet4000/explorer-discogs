@@ -14,10 +14,19 @@ export default DS.Model.extend({
   realname: DS.attr('string'),
   namevariations: DS.attr(),
   profile: DS.attr('string'),
+  profileHtml: DS.attr('string'),
+  profilePlaintext: DS.attr('string'),
   releasesUrl: DS.attr('string'),
   resourceUrl: DS.attr('string'),
   uri: DS.attr('string'),
   urls: DS.attr(),
+
+  // Returns in priority HTML, plaintext or just profile
+  profileDynamic: computed('profile', 'profileHtml', 'profilePlaintext', function () {
+    const {profile, profileHtml, profilePlaintext} = this
+    if (!profileHtml && !profilePlaintext) return profile
+    return profileHtml ? profileHtml : profilePlaintext
+  }),
 
   discogsHumanUrl: computed('id', function() {
     return `https://discogs.com/artist/${this.get('id')}`;

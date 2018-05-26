@@ -18,7 +18,6 @@ export default DS.Model.extend({
   labels: DS.attr(),
   lowestPrice: DS.attr('number'),
   mainReleaseUrl: DS.attr('string'),
-  masterUrl: DS.attr('string'),
   notes: DS.attr('string'),
   numForSale: DS.attr('number'),
   released: DS.attr('date'),
@@ -32,7 +31,8 @@ export default DS.Model.extend({
   // Relations
   videos: DS.hasMany('video'),
   mainRelease: DS.belongsTo('release', {async: true}),
-  masterId: DS.belongsTo('master'),
+  masterId: DS.attr('string'),
+  masterUrl: DS.attr('string'),
   // artists: DS.hasMany('artist', {async: true}),
 
   discogsHumanUrl: computed('id', function() {

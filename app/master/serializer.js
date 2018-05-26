@@ -1,8 +1,14 @@
+import DS from 'ember-data';
 import Serializer from '../application/serializer'
 
-export default Serializer.extend({
+const { EmbeddedRecordsMixin } = DS;
+
+export default Serializer.extend(EmbeddedRecordsMixin, {
   attrs: {
-    'mainRelease': 'release'
+    mainRelease: 'release',
+    videos: {
+      embedded: 'always'
+    }
   },
   normalizeFindRecordResponse(store, primaryModelClass, payload, id, requestType) {
     let newPayload = payload
@@ -14,3 +20,4 @@ export default Serializer.extend({
     return this._super(store, primaryModelClass, newPayload, id, requestType)
   }
 })
+
