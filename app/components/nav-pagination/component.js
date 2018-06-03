@@ -15,5 +15,5 @@ export default Component.extend({
   hasNextPage: computed('currentPage', 'totalPages', function() {
     return this.get('totalPages') - this.get('currentPage') > 0
   }),
-  hasPreviousPage: gt('currentPage', 0)
+  hasPreviousPage: gt('currentPage', 1)
 });

@@ -8,9 +8,9 @@ export default DS.JSONSerializer.extend({
 
   normalizeArrayResponse(store, primaryModelClass, payload, id, requestType) {
 
-    let { results, releases, pagination } = payload;
+    let { results,  pagination } = payload;
 
-    let newPayload = results || releases;
+    let newPayload = results;
 
     let document = this._super(store, primaryModelClass, newPayload, id, requestType);
 
