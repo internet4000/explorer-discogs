@@ -3,6 +3,7 @@ import { computed } from '@ember/object';
 import { gt } from '@ember/object/computed';
 
 export default Component.extend({
+  path: undefined,
   currentPage: undefined,
   totalPages: undefined,
   nextPage: computed('currentPage', function() {
