@@ -1,6 +1,6 @@
 {{!-- <h2>Releases</h2> --}}
 
-{{#each-list model.releases as |item|}}
+{{#each-list model as |item|}}
   {{link-to item.title "release" item.id}}
   {{#if item.videos}}
     {{play-release release=item}}
