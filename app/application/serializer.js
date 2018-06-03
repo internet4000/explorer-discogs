@@ -16,6 +16,7 @@ export default DS.JSONSerializer.extend({
     if (pagination) {
       document.meta = Object.assign({}, { pagination });
     }
+
     return document;
-  },
+  }
 });

@@ -1,7 +1,17 @@
 import Route from '@ember/routing/route';
 
 export default Route.extend({
-  model() {
-    return this.modelFor('label').get('labelReleases');
+  queryParams: {
+    page: {
+      refreshModel: true
+    }
+  },
+  model(params) {
+    const id = this.modelFor('label').get('id');
+    return this.store.query('labelReleases', {
+      id,
+      page: params.page,
+      per_page: params.perPage
+    });
   }
 });

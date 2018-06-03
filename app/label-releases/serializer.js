@@ -1,7 +1,9 @@
 import ApplicationSerializer  from '../application/serializer';
 
-export default ApplicationSerializer .extend({
+export default ApplicationSerializer.extend({
   normalizeResponse(store, primaryModelClass, payload, id, requestType) {
+    let { pagination } = payload;
+
     let newPayload = {
       id,
       releases: payload.releases.map((i) => {
@@ -10,6 +12,11 @@ export default ApplicationSerializer .extend({
       })
     };
 
-    return this._super(store, primaryModelClass, newPayload, id, requestType);
+    let document = this._super(store, primaryModelClass, newPayload, id, requestType);
+
+    if (pagination) {
+      document.meta = Object.assign({}, { pagination });
+    }
+    return document;
   }
 });
