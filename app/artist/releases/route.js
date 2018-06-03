@@ -6,7 +6,13 @@ export default Route.extend({
       refreshModel: true
     }
   },
-  model() {
-    return this.modelFor('artist').get('artistReleases');
+  model(params) {
+    const artistId = this.modelFor('artist').get('id');
+
+    return this.store.query('release', {
+      artistId,
+      page: params.page,
+      per_page: params.perPage
+    });
   }
 });

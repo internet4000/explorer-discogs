@@ -7,9 +7,9 @@ export default Route.extend({
     }
   },
   model(params) {
-    const id = this.modelFor('label').get('id');
-    return this.store.query('labelReleases', {
-      id,
+    const labelId = this.modelFor('label').get('id');
+    return this.store.query('release', {
+      labelId: labelId,
       page: params.page,
       per_page: params.perPage
     });
