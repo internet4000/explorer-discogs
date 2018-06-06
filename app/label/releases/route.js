@@ -12,6 +12,10 @@ export default Route.extend({
       labelId: labelId,
       page: params.page,
       per_page: params.perPage
-    });
+    })
+  },
+  afterModel(model) {
+    // Reload models without extra data.
+    model.rejectBy('uri').invoke('reload')
   }
 });
