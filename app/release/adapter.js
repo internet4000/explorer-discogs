@@ -1,7 +1,7 @@
 import ApplicationAdapter from '../application/adapter';
 
 export default ApplicationAdapter.extend({
-  urlForQuery (query, modelName) {
+  urlForQuery(query) {
     let { labelId, artistId } = query;
     let baseUrl;
 
