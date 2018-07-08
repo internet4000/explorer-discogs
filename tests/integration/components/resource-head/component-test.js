@@ -8,6 +8,6 @@ module('Integration | Component | resource-head', function(hooks) {
 
   test('it renders', async function(assert) {
     await render(hbs`{{resource-head title="it works"}}`);
-    assert.equal(this.element.querySelector('h1').textContent.trim(), 'it works');
+    assert.dom(this.element.querySelector('h1')).hasText('it works');
   });
 });
