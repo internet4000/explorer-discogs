@@ -21,6 +21,6 @@ export default DS.Model.extend({
   year: DS.attr('number'),
 
   discogsHumanUrl: computed('id', function() {
-    return `https://discogs.com/master/${this.get('id')}`;
+    return `https://discogs.com/master/${this.id}`;
   })
 });

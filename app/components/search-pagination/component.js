@@ -7,13 +7,13 @@ export default Component.extend({
   totalPages: undefined,
   search: undefined,
   nextPage: computed('currentPage', function() {
-    return this.get('currentPage') + 1
+    return this.currentPage + 1;
   }),
   previousPage: computed('currentPage', function() {
-    return this.get('currentPage') - 1
+    return this.currentPage - 1;
   }),
   hasNextPage: computed('currentPage', 'totalPages', function() {
-    return this.get('totalPages') - this.get('currentPage') > 0
+    return this.totalPages - this.currentPage > 0;
   }),
   hasPreviousPage: gt('currentPage', 0)
 });

@@ -15,6 +15,6 @@ export default DS.Model.extend({
   sublabels: DS.hasMany('label', {inverse: null, async: true}),
 
   discogsHumanUrl: computed('id', function() {
-    return `https://discogs.com/label/${this.get('id')}`;
+    return `https://discogs.com/label/${this.id}`;
   })
 });

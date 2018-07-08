@@ -29,6 +29,6 @@ export default DS.Model.extend({
   }),
 
   discogsHumanUrl: computed('id', function() {
-    return `https://discogs.com/artist/${this.get('id')}`;
+    return `https://discogs.com/artist/${this.id}`;
   })
 });

@@ -49,7 +49,7 @@ export default Service.extend({
   },
 
   loadPlaylistInPlayer(playlist) {
-    this.get('mediaPlayer').updatePlaylist(playlist);
+    this.mediaPlayer.updatePlaylist(playlist);
 	}
 
 });

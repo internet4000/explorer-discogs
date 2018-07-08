@@ -36,6 +36,6 @@ export default DS.Model.extend({
   // artists: DS.hasMany('artist', {async: true}),
 
   discogsHumanUrl: computed('id', function() {
-    return `https://discogs.com/release/${this.get('id')}`;
+    return `https://discogs.com/release/${this.id}`;
   })
 });
