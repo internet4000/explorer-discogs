@@ -11,6 +11,6 @@ module('Integration | Helper | eq', function(hooks) {
 
     await render(hbs`{{eq inputValue 3}}`);
 
-    assert.equal(this.element.textContent.trim(), "false")
+    assert.dom(this.element).hasText('false')
   });
 });

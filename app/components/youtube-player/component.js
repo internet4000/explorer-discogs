@@ -29,7 +29,7 @@ export default Component.extend({
   },
 
   willDestroyElement() {
-    this.get('youtubePlayer').destroy()
+    this.youtubePlayer.destroy()
     this._super(...arguments)
   }
 });

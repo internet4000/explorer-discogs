@@ -7,7 +7,7 @@ export default Component.extend({
 
   actions: {
     click() {
-      this.get('player').play(this.get('model'));
+      this.player.play(this.model);
     }
   }
 });

@@ -10,12 +10,12 @@ export default DS.Model.extend({
   uri: DS.attr('string'),
   urls: DS.attr(),
 
-  releases: DS.belongsTo('releases', {inverse: null, async: true}),
+  releases: DS.belongsTo('release', {inverse: null, async: true}),
 
   parentLabel: DS.belongsTo('label', {inverse: null, async: true}),
   sublabels: DS.hasMany('label', {inverse: null, async: true}),
 
   discogsHumanUrl: computed('id', function() {
-    return `https://discogs.com/label/${this.get('id')}`;
+    return `https://discogs.com/label/${this.id}`;
   })
 });

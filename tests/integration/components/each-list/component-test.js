@@ -10,7 +10,7 @@ module('Integration | Component | each-list', function(hooks) {
     this.set('items', ['a', 'b', 'c'])
 
     await render(hbs`{{each-list items}}`);
-    assert.equal(this.element.querySelectorAll('li')[1].textContent.trim(), 'b');
+    assert.dom(this.element.querySelectorAll('li')[1]).hasText('b');
 
     // Template block usage:
     await render(hbs`
