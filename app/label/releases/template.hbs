@@ -1,13 +1,16 @@
 {{!-- <h2>Releases</h2> --}}
 
-{{#each-list model as |item|}}
-  {{#link-to "release" item.id}}
-    {{item.artist}} - {{item.title}}
-  {{/link-to}}
-  {{#if item.videos}}
-    {{play-release release=item}}
-  {{/if}}
-{{/each-list}}
+{{#sort-by model "year" as |sortedModel|}}
+  {{#each-list sortedModel as |item|}}
+    {{item.year}} -
+    {{#link-to "release" item.id}}
+      {{item.artist}} - {{item.title}}
+    {{/link-to}}
+    {{#if item.videos}}
+      {{play-release release=item}}
+    {{/if}}
+  {{/each-list}}
+{{/sort-by}}
 
 {{nav-pagination
     path='label.releases'
