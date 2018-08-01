@@ -1,5 +1,4 @@
-{{#each-list model as |item|}}
-
+{{#each-list (sort-by model "year") as |item|}}
   {{link-to item.title "release" item.id}}
 
   {{#if item.videos}}
@@ -11,7 +10,6 @@
       <em>{{item.year}}</em> — {{label.name}}
     {{/each-list}}
   {{/if}}
-
 {{/each-list}}
 
 {{nav-pagination
