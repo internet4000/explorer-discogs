@@ -8,7 +8,7 @@ export default DS.Model.extend({
   members: DS.hasMany('artist', {inverse: null}),
   groups: DS.hasMany('artist', {inverse: null}),
   aliases: DS.hasMany('artist', {inverse: null}),
-  artistReleases: DS.belongsTo('artistReleases', {inverse: null, async: true}),
+  releases: DS.belongsTo('releases', {inverse: null, async: true}),
 
   name: DS.attr('string'),
   realname: DS.attr('string'),
