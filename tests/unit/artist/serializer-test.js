@@ -18,7 +18,6 @@ module('Unit | Serializer | artist', function(hooks) {
     let record = run(() => store.createRecord('artist', {}))
 
     let serializedRecord = record.serialize()
-    console.log(serializedRecord)
 
     assert.ok(serializedRecord)
   })
