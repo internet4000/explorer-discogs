@@ -1,6 +1,7 @@
 {{!-- <h2>Releases</h2> --}}
 
-{{#each-list model as |item|}}
+{{#each-list (sort-by model "year") as |item|}}
+  {{item.year}} -
   {{#link-to "release" item.id}}
     {{item.artist}} - {{item.title}}
   {{/link-to}}
