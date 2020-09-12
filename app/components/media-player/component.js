@@ -3,9 +3,8 @@ import 'npm:radio4000-player';
 import { inject as service } from '@ember/service';
 import { readOnly } from '@ember/object/computed';
 import {later} from '@ember/runloop'
-import { keyResponder, onKey } from 'ember-keyboard';
 
-export default keyResponder(Component.extend({
+export default Component.extend({
   tagName: 'div',
   classNames: ['MediaPlayer'],
   classNameBindings: ['hasTrack:is--active'],
@@ -22,12 +21,5 @@ export default keyResponder(Component.extend({
       let vue = playerDom.__vue_custom_element__.$children[0];
       this.set('player.mediaPlayer', vue);
     }, 16)
-  },
-  fullscreenShortcut: onKey('f'),
-  actions: {
-    fullscreen() {
-      console.log('yo')
-      window.document.querySelector('radio4000-player').requestFullscreen()
-    }
   }
-}));
+});
