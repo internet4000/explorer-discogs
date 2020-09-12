@@ -7,7 +7,8 @@ export default DS.JSONSerializer.extend({
   },
 
   normalizeArrayResponse(store, primaryModelClass, payload, id, requestType) {
-    let { results, pagination } = payload;
+
+    let { results,  pagination } = payload;
 
     let newPayload = results;
 
@@ -16,6 +17,7 @@ export default DS.JSONSerializer.extend({
     if (pagination) {
       document.meta = Object.assign({}, { pagination });
     }
+
     return document;
-  },
+  }
 });

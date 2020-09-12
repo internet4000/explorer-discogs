@@ -8,7 +8,7 @@ export default Route.extend({
   },
   model(params) {
     if (params.query) {
-      return this.get('store').query('searchQuery', {
+      return this.store.query('searchQuery', {
         q: params.query,
         page: params.page,
         per_page: params.perPage,

@@ -1,11 +1,11 @@
-<label>
-  <span class="ScreenReader">Search Discogs</span>
+<label class="Form-item Form-item--search">
   {{input
     type="search"
     placeholder='Search Discogs…'
     value=query}}
 </label>
 
-{{search-filter type=type}}
+{{search-filter type=type class="Form-item"}}
 
-<button type="submit">Search</button>
+
+<button class="Form-item" type="submit">Search</button>

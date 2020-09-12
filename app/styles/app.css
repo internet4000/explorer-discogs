@@ -1,13 +1,68 @@
 html {
-  font-size: 14px;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 16px;
   line-height: 1.5;
   font-family: system-ui, segoe ui, sans-serif;
   color: black;
 }
 
 body {
-  margin: 2vw 3vw;
+  margin: 0;
+  padding: 0;
   background: hsl(0, 0%, 96%);
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+.ExplorerDiscogs {
+  min-height: 100%;
+}
+.ExplorerDiscogs > div {
+  min-height: 100%;
+}
+@media (min-width: 70rem) {
+  .ExplorerDiscogs > div {
+    display: flex;
+    height: 100vh;
+  }
+}
+.SiteBody {
+  flex-grow: 1;
+  height: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (min-width: 70rem) {
+  .SiteBody {
+    max-height: 100vh;
+    overflow-y: scroll;
+  }
+}
+
+.SiteContent {
+  width: 100%;
+  max-width: 50rem;
+}
+
+.SiteNav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: auto;
+}
+.SiteNav h1 a {
+  padding: 0.5rem;
 }
 
 h1,
@@ -25,8 +80,7 @@ h3,
 h4,
 p,
 summary {
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin-top: 0;
 }
 
 a,
@@ -64,22 +118,33 @@ nav h1 {
 }
 
 .MediaPlayer {
-  position: fixed;
-  z-index: 2;
-  bottom: 0;
-  right: 1rem;
-  right: 3vw;
-  width: 17rem;
-  height: 30rem;
+  width: 100%;
   display: none;
+}
+@media (min-width: 70rem) {
+  .MediaPlayer {
+    padding: 1rem;
+    order: 2;
+    max-width: 30rem;
+  }
 }
 
 .MediaPlayer.is--active {
   display: block;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+@media (min-width: 70rem) {
+  .MediaPlayer.is--active {
+    position: relative;
+  }
 }
 
 .MediaPlayer radio4000-player {
-  height: 100%;
+  min-height: 100%;
+  min-width: 100%;
 }
 
 radio4000-player .Header-body {
@@ -87,20 +152,42 @@ radio4000-player .Header-body {
 }
 
 radio4000-player .Header-media img {
-  height: 100%;
+  min-height: 100%;
   object-fit: cover;
 }
 
-/* Visually hide an element, but leave it available for screen readers */
-.ScreenReader {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
+
+.Form {
+  display: flex;
+  align-items: center;
+}
+.Form--search {
+  margin-bottom: 2rem;
 }
 
+.Form-item--search {
+  display: flex;
+  flex-grow: 1;
+}
+
+.Form-item {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.Form-item:first-child {
+  padding-left: 0;
+}
+.Form-item:last-child {
+  padding-right: 0;
+}
+
+.Form-item .ember-text-field {
+  flex-grow: 1;
+}
+
+.SiteFullscreen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}

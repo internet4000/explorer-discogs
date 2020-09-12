@@ -8,6 +8,10 @@ export default DS.Model.extend({
   // series: DS.attr(),
   // status: DS.attr('string'),
   // thumb: DS.attr(),
+
+  // Only defined on label/releases endpoint.
+  artist: DS.attr('string'),
+
   artists: DS.attr(),
   artistsSort: DS.attr('string'),
   companies: DS.attr(),
@@ -36,6 +40,6 @@ export default DS.Model.extend({
   // artists: DS.hasMany('artist', {async: true}),
 
   discogsHumanUrl: computed('id', function() {
-    return `https://discogs.com/release/${this.get('id')}`;
+    return `https://discogs.com/release/${this.id}`;
   })
 });

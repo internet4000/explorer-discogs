@@ -22,5 +22,14 @@ export default Serializer.extend(EmbeddedRecordsMixin, {
     // }
 
     return this._super(store, primaryModelClass, newPayload, id, requestType)
+  },
+  normalizeArrayResponse(store, primaryModelClass, payload, id, requestType) {
+    let newPayload = payload;
+
+    if (payload.releases) {
+      newPayload.results = payload.releases
+    }
+
+    return this._super(store, primaryModelClass, newPayload, id, requestType)
   }
 })

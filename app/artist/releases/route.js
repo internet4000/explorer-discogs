@@ -1,7 +1,22 @@
 import Route from '@ember/routing/route';
 
 export default Route.extend({
-  model() {
-    return this.modelFor('artist').get('artistReleases');
+  queryParams: {
+    page: {
+      refreshModel: true
+    }
+  },
+  model(params) {
+    const artistId = this.modelFor('artist').get('id');
+
+    return this.store.query('release', {
+      artistId,
+      page: params.page,
+      per_page: params.perPage
+    });
+  },
+  afterModel(model) {
+    // Reload models without extra data.
+    model.rejectBy('uri').invoke('reload')
   }
 });

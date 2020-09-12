@@ -1,10 +1,14 @@
-<nav>
-  <h1>{{link-to "Explorer for Discogs" "application"}}</h1>
-  {{search-head}}
-</nav>
-
-{{outlet}}
-
 {{media-player}}
+
+<main class="SiteBody">
+  <nav class="SiteNav">
+    <h1>{{link-to "Explorer for Discogs" "application"}}</h1>
+  </nav>
+
+  <div class="SiteContent">
+    {{outlet}}
+  </div>
+</main>
+
 {{!-- {{youtube-player}} --}}
 {{!-- {{player-controls}} --}}

@@ -13,6 +13,6 @@ module('Integration | Helper | format-profile', function(hooks) {
   test('it changes discogs links to local links', async function(assert) {
     this.set('inputValue', profileHtml)
     await render(hbs`{{format-profile inputValue}}`)
-    assert.equal(this.element.textContent.trim(), profileHtmlExpected)
+    assert.dom(this.element).hasText(profileHtmlExpected)
   })
 })

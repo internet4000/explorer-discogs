@@ -1,7 +1,14 @@
 # explorer-discogs
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+Relies on https://github.com/internet4000/edapi, and the redis database.
+
+It is supposed to be a nice user experience to explore Discogs' data.
+
+On going experiementation, please feel free to add or request features.
+
+It uses the radio4000-player https://github.com/internet4000/radio4000-player.
+
+# Development
 
 ## Prerequisites
 
