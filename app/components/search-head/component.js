@@ -4,6 +4,7 @@ import {inject} from '@ember/service'
 export default Component.extend({
   router: inject(),
 
+  classNames: ['Form', 'Form--search'],
   tagName: 'form',
   query: '',
   type: '',
